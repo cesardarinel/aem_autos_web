@@ -1,0 +1,21 @@
+template aem :
+https://www.drivco-wp.egenslab.com/
+paleta de colores :
+Paleta de Colores Extendida
+Azul Principal (Logo): #005087 ( títulos principales).
+
+Blanco (Logo): #FFFFFF (Para el fondo principal de la página).
+
+Naranja Vibrante (Acento): #FF6B00 (Crea un contraste perfecto con el azul. Úsalo solo para botones importantes como "Comprar", "Contactar" o "Ver Oferta").
+
+Gris Claro (Fondos): #F3F4F6 (Úsalo para el fondo de las tarjetas de los vehículos o para separar secciones).
+
+Gris Oscuro (Texto): #333333 (Para los párrafos. Cansa menos la vista que el negro puro).
+
+Tipografía Recomendada (Google Fonts)
+Títulos (H1, H2, H3): Montserrat. Es una letra geométrica, fuerte y moderna. Transmite mucha confianza, ideal para agencias de vehículos y mostrar precios.
+
+Cuerpo de Texto (Párrafos): Roboto o Inter. Son muy limpias, neutras y fáciles de leer en celulares.
+
+Guía Rápida de Diseño (UI)
+Bordes: Como tu logo es circular, te recomiendo usar bordes ligeramente redondeados en tus botones y tarjetas de vehículos (en CSS: border-radius: 8px). Esto da una sensación más amigable y moderna.
