@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="row g-4 mb-5">
           <div className="col-lg-4 col-md-6">
             <div className="footer-logo mb-4">
-              <img src="/logo.png" alt="AEM Autos" style={{ maxWidth: '180px' }} />
+              <img src="/assets/images/logos/logo-footer.png" alt="AEM Autos" style={{ maxWidth: '180px' }} />
             </div>
             <p className="mb-4">
               Concesionario de vehículos importados americanos en Santiago, República Dominicana. 

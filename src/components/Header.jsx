@@ -7,7 +7,7 @@ const Header = () => {
       <div className="top-bar">
         <div className="company-logo">
           <a href="/" title="Drivco">
-            <img className="img-fluid" src="/logo.png" alt="AEM Autos" style={{ width: '220px' }} />
+            <img className="img-fluid" src="/assets/images/logos/logo.png" alt="AEM Autos" style={{ width: '220px' }} />
           </a>
         </div>
         <div className="search-area">

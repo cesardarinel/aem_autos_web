@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Header from './components/Header';
 import HeroBanner from './components/HeroBanner';
 import LatestCars from './components/LatestCars';
@@ -25,9 +27,7 @@ function App() {
     window.addEventListener('hashchange', handleHash);
     handleHash();
 
-    if (window.AOS) {
-      window.AOS.init({ duration: 1000, once: false });
-    }
+    AOS.init({ duration: 1000, once: false });
 
     return () => window.removeEventListener('hashchange', handleHash);
   }, [view]);

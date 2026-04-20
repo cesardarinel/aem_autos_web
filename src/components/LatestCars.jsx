@@ -52,7 +52,7 @@ const LatestCars = () => {
                 <div className="product-img">
                   <img src={car.image} alt={car.name} className="img-fluid" style={{ height: '250px', objectFit: 'cover' }} />
                   <div className="number-of-img">
-                    <a href="#"><img src="/modelos/Home 06 – Drivco_files/gallery-icon-1.svg" alt="gallery" /> 1</a>
+                    <a href="#"><img src="/assets/images/icons/gallery-icon-1.svg" alt="gallery" /> 1</a>
                   </div>
                 </div>
                 <div className="product-content">
@@ -61,9 +61,9 @@ const LatestCars = () => {
                   </div>
                   <h6><a href="#">{car.name} - {car.year}</a></h6>
                   <ul className="features">
-                    <li><img src="/modelos/Home 06 – Drivco_files/milage_icon.svg" alt="m" /> {car.mileage}</li>
-                    <li><img src="/modelos/Home 06 – Drivco_files/info_icon.svg" alt="i" /> {car.transmission}</li>
-                    <li><img src="/modelos/Home 06 – Drivco_files/engine_icon.svg" alt="e" /> Gasolina</li>
+                    <li><img src="/assets/images/icons/milage_icon.svg" alt="m" /> {car.mileage}</li>
+                    <li><img src="/assets/images/icons/info_icon.svg" alt="i" /> {car.transmission}</li>
+                    <li><img src="/assets/images/icons/engine_icon.svg" alt="e" /> Gasolina</li>
                   </ul>
                   <div className="button-and-price">
                     <a className="primary-btn1" href={`https://wa.me/18299951554?text=Me%20interesa%20el%20${car.name}`}>Detalles</a>
