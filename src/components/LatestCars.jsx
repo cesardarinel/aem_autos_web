@@ -1,48 +1,89 @@
 import React from 'react';
-import CarCard from './CarCard';
 
 const LatestCars = () => {
   const cars = [
-    { id: 1, title: 'Toyota Camry-2023', location: 'Santo Domingo', mileage: '25,100 millas', fuel: 'Gasolina', cc: '22,231 cc', price: '$3,560' },
-    { id: 2, title: 'Volkswagen Golf-2023', location: 'Santiago', mileage: '25,100 millas', fuel: 'Gasolina', cc: '22,231 cc', price: '$55,656' },
-    { id: 3, title: 'Lexus RX-2021', location: 'Punta Cana', mileage: '25,100 millas', fuel: 'Gasolina', cc: '22,231 cc', price: '$65,656' },
-    { id: 4, title: 'Cadillac Escalade-2023', location: 'La Romana', mileage: '25,100 millas', fuel: 'Gasolina', cc: '22,231 cc', price: '$62,787' },
-    { id: 5, title: 'Mazda CX-30-2021', location: 'Puerto Plata', mileage: '25,100 millas', fuel: 'Gasolina', cc: '22,231 cc', price: '$54,614' },
-    { id: 6, title: 'Jeep Wrangler-2023', location: 'Santo Domingo', mileage: '25,100 millas', fuel: 'Gasolina', cc: '22,231 cc', price: '$48,651' },
+    {
+      id: 1,
+      name: 'Jeep Grand Cherokee',
+      image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=600&q=80',
+      year: '2022',
+      transmission: 'Automático',
+      mileage: '28,500 miles',
+      price: '$38,500',
+      location: 'Santiago, RD'
+    },
+    {
+      id: 2,
+      name: 'Ford F-150 Lariat',
+      image: 'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=600&q=80',
+      year: '2023',
+      transmission: 'V6 EcoBoost',
+      mileage: '15,200 miles',
+      price: '$52,900',
+      location: 'Santiago, RD'
+    },
+    {
+      id: 3,
+      name: 'Chevrolet Tahoe',
+      image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80',
+      year: '2021',
+      transmission: 'V8 Engine',
+      mileage: '32,100 miles',
+      price: '$45,800',
+      location: 'Santiago, RD'
+    }
   ];
 
   return (
-    <section className="py-5 mt-4">
+    <div className="home6-letest-car-section" id="vehiculos">
       <div className="container">
-        <div className="text-center mb-5">
-          <h2 style={{ color: 'var(--primary-blue)' }}>Últimos Vehículos</h2>
-          <p className="text-muted">Para obtener la información más precisa y actualizada</p>
+        <div className="row mb-50">
+          <div className="col-lg-12">
+            <div className="section-title-2">
+              <h2>Vehículos Destacados</h2>
+              <p>Explora nuestra selección premium de vehículos importados en condiciones excepcionales</p>
+            </div>
+          </div>
         </div>
-        
-        <ul className="nav nav-tabs mb-4 border-0 justify-content-center">
-          <li className="nav-item">
-            <button className="nav-link active">Vehículos Destacados</button>
-          </li>
-          <li className="nav-item">
-            <button className="nav-link">Últimos Vehículos</button>
-          </li>
-          <li className="nav-item">
-            <button className="nav-link">Recién Listados</button>
-          </li>
-          <li className="nav-item">
-            <button className="nav-link">Menor Kilometraje</button>
-          </li>
-        </ul>
-
         <div className="row g-4">
           {cars.map(car => (
-            <div className="col-lg-4 col-md-6" key={car.id}>
-              <CarCard car={car} />
+            <div key={car.id} className="col-lg-4 col-md-6">
+              <div className="product-card4 style-3">
+                <div className="product-img">
+                  <img src={car.image} alt={car.name} className="img-fluid" style={{ height: '250px', objectFit: 'cover' }} />
+                  <div className="number-of-img">
+                    <a href="#"><img src="/modelos/Home 06 – Drivco_files/gallery-icon-1.svg" alt="gallery" /> 1</a>
+                  </div>
+                </div>
+                <div className="product-content">
+                  <div className="location">
+                    <i className="bi bi-geo-alt"></i> {car.location}
+                  </div>
+                  <h6><a href="#">{car.name} - {car.year}</a></h6>
+                  <ul className="features">
+                    <li><img src="/modelos/Home 06 – Drivco_files/milage_icon.svg" alt="m" /> {car.mileage}</li>
+                    <li><img src="/modelos/Home 06 – Drivco_files/info_icon.svg" alt="i" /> {car.transmission}</li>
+                    <li><img src="/modelos/Home 06 – Drivco_files/engine_icon.svg" alt="e" /> Gasolina</li>
+                  </ul>
+                  <div className="button-and-price">
+                    <a className="primary-btn1" href={`https://wa.me/18299951554?text=Me%20interesa%20el%20${car.name}`}>Detalles</a>
+                    <div className="price-area">
+                      <span>Precio</span>
+                      <h6>{car.price}</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
+        <div className="text-center mt-50">
+          <a className="primary-btn1 px-5" href="https://www.corotos.com.do/shops/gerson-melvin-auto-import" target="_blank" rel="noreferrer">
+            VER CATÁLOGO COMPLETO <i className="bi bi-arrow-right-short ms-2"></i>
+          </a>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

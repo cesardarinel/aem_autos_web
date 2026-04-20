@@ -1,39 +1,51 @@
 import React from 'react';
 
 const ExploreBrands = () => {
-  const brands = [
-    { id: 1, name: 'Toyota', count: '14 Vehículos' },
-    { id: 2, name: 'BMW', count: '21 Vehículos' },
-    { id: 3, name: 'Audi', count: '15 Vehículos' },
-    { id: 4, name: 'Mercedes', count: '18 Vehículos' },
-    { id: 5, name: 'Ferrari', count: '8 Vehículos' },
-    { id: 6, name: 'Hyundai', count: '32 Vehículos' },
+  const benefits = [
+    { 
+      icon: 'bi-lightning-charge-fill', 
+      title: 'Financiamiento Rápido', 
+      desc: 'Aprobación en menos de 24 horas con procesos simplificados.' 
+    },
+    { 
+      icon: 'bi-shield-check', 
+      title: 'Condiciones AAA+', 
+      desc: 'Todos nuestros vehículos pasan por una inspección rigurosa.' 
+    },
+    { 
+      icon: 'bi-person-check', 
+      title: 'Atención Personalizada', 
+      desc: 'Asesoría experta de principio a fin, adaptada a tus necesidades.' 
+    },
+    { 
+      icon: 'bi-file-earmark-check', 
+      title: 'Trámites Rápidos', 
+      desc: 'Gestionamos toda la documentación para tu comodidad.' 
+    }
   ];
 
   return (
-    <section className="py-5 bg-light-gray mt-5">
+    <div className="explore-brand-section pt-100 pb-100 bg-light-gray" id="beneficios">
       <div className="container">
-        <div className="text-center mb-5">
-          <h2 style={{ color: 'var(--primary-blue)' }}>Explorar por Marca</h2>
-          <p className="text-muted">Para obtener la información más precisa y actualizada</p>
+        <div className="section-title-2 text-center mb-50">
+          <span>Por qué elegirnos</span>
+          <h2>Beneficios de comprar en AEM Autos</h2>
         </div>
-        <div className="row g-4 justify-content-center">
-          {brands.map(brand => (
-            <div className="col-xl-2 col-lg-3 col-md-4 col-6" key={brand.id}>
-              <div className="brand-card card text-center py-4 h-100 border-0 shadow-sm" style={{ cursor: 'pointer' }}>
-                <div className="card-body">
-                  <div className="brand-icon mb-3" style={{ height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', color: 'var(--primary-blue)' }}>
-                    <i className="bi bi-car-front-fill"></i>
-                  </div>
-                  <h6 className="fw-bold mb-1">{brand.name}</h6>
-                  <span className="text-muted small">{brand.count}</span>
+        <div className="row g-4">
+          {benefits.map((b, i) => (
+            <div key={i} className="col-lg-3 col-md-6 text-center">
+              <div className="card h-100 p-4 border-0 shadow-sm rounded-4 brand-card" style={{ transition: '0.3s' }}>
+                <div className="icon mb-4 d-flex justify-content-center align-items-center mx-auto" style={{ width: '80px', height: '80px', backgroundColor: 'rgba(45, 114, 176, 0.1)', borderRadius: '50%' }}>
+                  <i className={`bi ${b.icon}`} style={{ fontSize: '2.5rem', color: '#2D72B0' }}></i>
                 </div>
+                <h4 className="mb-2" style={{ color: '#0D3B66', fontSize: '1.2rem', fontWeight: '700' }}>{b.title}</h4>
+                <p className="text-muted mb-0" style={{ fontSize: '0.9rem', lineHeight: '1.5' }}>{b.desc}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -2,82 +2,77 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="footer mt-5 pt-5 pb-3">
+    <footer className="footer pt-100 pb-50" id="contacto">
       <div className="container">
-        <div className="row gy-5 mb-5">
-          <div className="col-lg-3 col-md-6">
-            <h5 className="footer-title mb-4 text-white">Sobre la Empresa</h5>
-            <ul className="footer-links list-unstyled">
-              <li><a href="#">Sobre Nosotros</a></li>
-              <li><a href="#">Devoluciones e Intercambios</a></li>
-              <li><a href="#">Política de Reembolso</a></li>
-              <li><a href="#">Reseñas</a></li>
-              <li><a href="#">Preguntas Frecuentes</a></li>
-              <li><a href="#">Contáctanos</a></li>
-            </ul>
+        <div className="row g-4 mb-5">
+          <div className="col-lg-4 col-md-6">
+            <div className="footer-logo mb-4">
+              <img src="/logo.png" alt="AEM Autos" style={{ maxWidth: '180px' }} />
+            </div>
+            <p className="mb-4">
+              Concesionario de vehículos importados americanos en Santiago, República Dominicana. 
+              Calidad AAA+, financiamiento rápido y atención personalizada.
+            </p>
+            <div className="social-links d-flex gap-3 mt-4">
+              <a href="https://instagram.com/aemautosrd" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <i className="bi bi-instagram"></i>
+              </a>
+              <a href="https://wa.me/18299951554" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+                <i className="bi bi-whatsapp"></i>
+              </a>
+              <a href="tel:+18299951554" aria-label="Phone">
+                <i className="bi bi-telephone-fill"></i>
+              </a>
+            </div>
           </div>
           
           <div className="col-lg-2 col-md-6">
-            <h5 className="footer-title mb-4 text-white">Búsqueda y Exploración</h5>
-            <ul className="footer-links list-unstyled">
-              <li><a href="#">Vehículos Usados</a></li>
-              <li><a href="#">Vehículos Nuevos</a></li>
-              <li><a href="#">Subasta de Vehículos</a></li>
-              <li><a href="#">Vender mi Vehículo</a></li>
-              <li><a href="#">Comprar Ahora</a></li>
+            <h5 className="footer-title mb-4">Enlaces Rápidos</h5>
+            <ul className="footer-links list-unstyled p-0">
+              <li className="mb-2"><a href="#inicio" className="text-decoration-none">Inicio</a></li>
+              <li className="mb-2"><a href="#vehiculos" className="text-decoration-none">Vehículos</a></li>
+              <li className="mb-2"><a href="#beneficios" className="text-decoration-none">Beneficios</a></li>
+              <li className="mb-2"><a href="#nosotros" className="text-decoration-none">Nosotros</a></li>
             </ul>
           </div>
-
-          <div className="col-lg-2 col-md-6">
-            <h5 className="footer-title mb-4 text-white">Vehículos por Marca</h5>
-            <ul className="footer-links list-unstyled">
-              <li><a href="#">BMW</a></li>
-              <li><a href="#">Ferrari</a></li>
-              <li><a href="#">Mercedes</a></li>
-              <li><a href="#">Suzuki</a></li>
-              <li><a href="#">TATA</a></li>
-              <li><a href="#">Toyota</a></li>
+          
+          <div className="col-lg-3 col-md-6">
+            <h5 className="footer-title mb-4">Nuestra Ubicación</h5>
+            <ul className="footer-links list-unstyled p-0">
+              <li className="mb-3 d-flex align-items-start gap-2">
+                <i className="bi bi-geo-alt mt-1"></i>
+                <span>Calle Principal, El Caimito 41000, Santiago, República Dominicana</span>
+              </li>
+              <li className="mb-2 d-flex align-items-center gap-2">
+                <i className="bi bi-clock"></i>
+                <span>Lun - Dom: 9:00 AM - 7:00 PM</span>
+              </li>
             </ul>
           </div>
-
-          <div className="col-lg-2 col-md-6">
-            <h5 className="footer-title mb-4 text-white">Vehículos por Ubicación</h5>
-            <ul className="footer-links list-unstyled">
-              <li><a href="#">Santo Domingo</a></li>
-              <li><a href="#">Santiago</a></li>
-              <li><a href="#">Punta Cana</a></li>
-              <li><a href="#">Puerto Plata</a></li>
-              <li><a href="#">La Romana</a></li>
+          
+          <div className="col-lg-3 col-md-6">
+            <h5 className="footer-title mb-4">Contacto Directo</h5>
+            <ul className="footer-links list-unstyled p-0">
+              <li className="mb-3 d-flex align-items-center gap-2">
+                <i className="bi bi-telephone-plus"></i>
+                <a href="tel:+18299951554" className="text-decoration-none">(829) 995-1554</a>
+              </li>
+              <li className="mb-3 d-flex align-items-center gap-2">
+                <i className="bi bi-telephone"></i>
+                <a href="tel:+18099973787" className="text-decoration-none">(809) 997-3787</a>
+              </li>
+              <li className="d-flex align-items-center gap-2">
+                <i className="bi bi-envelope"></i>
+                <span>info@aemautos.com.do</span>
+              </li>
             </ul>
-          </div>
-
-          <div className="col-lg-3 col-md-12">
-            <h5 className="footer-title mb-4 text-white">Contáctanos</h5>
-            <div className="d-flex align-items-start gap-3 mb-3 text-white-50">
-              <i className="bi bi-geo-alt fs-5 text-white"></i>
-              <span>998Q+JVQ, Calle Principal, El Caimito 41000, República Dominicana</span>
-            </div>
-            <div className="d-flex align-items-start gap-3 text-white-50">
-              <i className="bi bi-telephone fs-5 text-white"></i>
-              <span>+18299951554</span>
-            </div>
           </div>
         </div>
-
-        <div className="footer-bottom pt-4 border-top border-secondary">
-          <div className="row align-items-center gy-3">
-            <div className="col-md-6 text-center text-md-start">
-              <p className="mb-0 text-white-50">Derechos de autor 2026 <span className="text-white fw-bold">AEM Autos</span> | Diseño por 1bits</p>
-            </div>
-            <div className="col-md-6 text-center text-md-end">
-              <div className="social-links d-flex gap-3 justify-content-center justify-content-md-end">
-                <span className="text-white me-2">Síguenos:</span>
-                <a href="https://www.facebook.com/AEMautosrd/" target="_blank" rel="noopener noreferrer"><i className="bi bi-facebook"></i></a>
-                <a href="https://www.instagram.com/aemautosrd/" target="_blank" rel="noopener noreferrer"><i className="bi bi-instagram"></i></a>
-                <a href="https://www.threads.com/@aemautosrd?xmt=AQF0ZbqhHSKqE1kyHEzlGDLIlJ_6k7dqbVOcE-KrRXY3QRk" target="_blank" rel="noopener noreferrer"><i className="bi bi-threads"></i></a>
-              </div>
-            </div>
-          </div>
+        
+        <div className="border-top pt-4 text-center">
+          <p className="small mb-0">
+            &copy; {new Date().getFullYear()} AEM Autos. Todos los derechos reservados.
+          </p>
         </div>
       </div>
     </footer>

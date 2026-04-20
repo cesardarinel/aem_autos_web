@@ -1,23 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import HeroBanner from './components/HeroBanner';
-import SearchForm from './components/SearchForm';
 import LatestCars from './components/LatestCars';
 import ExploreBrands from './components/ExploreBrands';
 import HowItWorks from './components/HowItWorks';
 import Footer from './components/Footer';
+import ContactUs from './components/ContactUs';
+import FinancingPage from './components/FinancingPage';
 
 function App() {
+  const [view, setView] = useState('home');
+
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash;
+      if (hash === '#contacto') {
+        setView('contact');
+      } else if (hash === '#financiamiento') {
+        setView('financing');
+      } else {
+        setView('home');
+      }
+    };
+    window.addEventListener('hashchange', handleHash);
+    handleHash();
+
+    if (window.AOS) {
+      window.AOS.init({ duration: 1000, once: false });
+    }
+
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, [view]);
+
   return (
     <div className="App">
       <Header />
-      <HeroBanner />
-      <div className="container">
-        <SearchForm />
-      </div>
-      <LatestCars />
-      <ExploreBrands />
-      <HowItWorks />
+      <main>
+        {view === 'home' && (
+          <>
+            <div data-aos="fade-down"><HeroBanner /></div>
+            <div data-aos="fade-up"><LatestCars /></div>
+            <div data-aos="fade-right"><ExploreBrands /></div>
+            <div data-aos="fade-left"><HowItWorks /></div>
+          </>
+        )}
+        {view === 'contact' && <div data-aos="fade-in"><ContactUs /></div>}
+        {view === 'financing' && <div data-aos="fade-in"><FinancingPage /></div>}
+      </main>
       <Footer />
     </div>
   );

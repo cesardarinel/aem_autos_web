@@ -1,106 +1,64 @@
-import React, { useEffect } from 'react';
-import logo from '../../logo.png'; // Assuming logo is in the root
+import React from 'react';
 
 const Header = () => {
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const header = document.querySelector('header.header-area');
-      if (header) {
-        header.classList.toggle("sticky", window.scrollY > 0);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <>
-      {/* Top Bar - adapted from HTML model */}
+      {/* Top Bar Original */}
       <div className="top-bar">
-        <div className="container d-flex justify-content-between align-items-center py-2">
-          <div className="company-logo">
-            <a href="/">
-              <img src={logo} alt="AEM Autos" className="img-fluid" style={{ height: '47px' }} />
-            </a>
-          </div>
-
-          <div className="topbar-right">
-            <ul className="list-unstyled d-flex align-items-center m-0">
-              <li>
-                <button className="primary-btn1 d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#sellUsModal01" style={{border: 'none', background: 'transparent'}}>
-                  <i className="bi bi-car-front me-2"></i> VENDE CON NOSOTROS
-                </button>
-              </li>
-            </ul>
-          </div>
+        <div className="company-logo">
+          <a href="/" title="Drivco">
+            <img className="img-fluid" src="/logo.png" alt="AEM Autos" style={{ width: '220px' }} />
+          </a>
+        </div>
+        <div className="search-area">
+          <form method="get" id="searchform" action="#">
+            <div className="form-inner">
+              <input type="text" name="s" id="s" placeholder="¿Qué vehículo buscas?" />
+              <button type="submit"><i className="bi bi-search"></i></button>
+            </div>
+          </form>
+        </div>
+        <div className="topbar-right">
+          <ul className="d-flex align-items-center list-unstyled m-0 gap-3">
+            <li>
+              <a className="primary-btn1" href="https://wa.me/18299951554" target="_blank" rel="noreferrer">
+                <i className="bi bi-whatsapp me-2"></i> WHATSAPP
+              </a>
+            </li>
+            <li>
+              <a className="primary-btn1" href="tel:+18299951554">
+                <i className="bi bi-telephone-fill me-2"></i> LLAMAR
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
-      {/* Main Header - adapted from HTML model */}
-      <header className="header-area style-1">
-        <div className="header-logo d-lg-none d-flex">
-          <a href="/" title="AEM Autos">
-            <img className="img-fluid" src={logo} alt="AEM Autos" />
-          </a>
+      {/* Header Area & Main Menu Sticky */}
+      <header className="header-area style-1 sticky-header">
+        <div className="header-logo d-lg-none d-flex justify-content-center py-2 bg-white">
+          <a href="/"><img src="/logo.png" alt="Logo" style={{ height: '40px' }} /></a>
         </div>
         <div className="main-menu">
           <div className="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
             <div className="mobile-logo-wrap">
-              <a href="/" title="AEM Autos">
-                <img className="img-fluid" src={logo} alt="AEM Autos" />
-              </a>
+              <a href="/"><img className="img-fluid" src="/logo.png" alt="Logo" style={{ height: '40px' }} /></a>
             </div>
           </div>
-
-          {/* Main Menu */}
           <div className="menu-main-menu-container">
             <ul id="menu-main-menu" className="menu-list">
-              <li className="menu-item menu-item-has-children"><a href="/">Inicio</a><i className="bi bi-plus dropdown-icon"></i></li>
-              <li className="menu-item menu-item-has-children"><a href="#">Vehículos Nuevos</a><i className="bi bi-plus dropdown-icon"></i></li>
-              <li className="menu-item"><a href="#">Vehículos Usados</a></li>
-              <li className="menu-item menu-item-has-children"><a href="#">Páginas</a><i className="bi bi-plus dropdown-icon"></i></li>
-              <li className="menu-item"><a href="#">Contáctanos</a></li>
+              <li className="menu-item"><a href="/#inicio">INICIO</a></li>
+              <li className="menu-item"><a href="/#vehiculos">VEHÍCULOS</a></li>
+              <li className="menu-item"><a href="/#beneficios">BENEFICIOS</a></li>
+              <li className="menu-item"><a href="#financiamiento">FINANCIAMIENTO</a></li>
+              <li className="menu-item"><a href="/#nosotros">NOSOTROS</a></li>
+              <li className="menu-item"><a href="#contacto">CONTACTO</a></li>
             </ul>
           </div>
-          
-          <div className="topbar-right d-lg-none d-block">
-            <a className="primary-btn3" href="#" data-bs-toggle="modal" data-bs-target="#sellUsModal01">
-              <i className="bi bi-car-front me-2"></i> VENDE CON NOSOTROS
-            </a>
-          </div>
-          <div className="hotline-area d-lg-none d-flex">
-            <div className="icon">
-              <img src="/modelos/Home 06 – Drivco_files/hotline-icon.svg" alt="Hotline" />
-            </div>
-            <div className="content">
-              <span>Para Más Información</span>
-              <h6><a href="tel:+18299951554">+18299951554</a></h6>
-            </div>
-          </div>
         </div>
-
-        <div className="nav-right d-flex jsutify-content-end align-items-center">
-          <div className="dropdown">
-            {/* Cart has been removed as requested */}
-          </div>
-          
-          <div className="hotline-area d-xl-flex d-none">
-            <div className="icon">
-              <img src="/modelos/Home 06 – Drivco_files/hotline-icon.svg" alt="Hotline" />
-            </div>
-            <div className="content">
-              <span>Para Más Información</span>
-              <h6><a href="tel:+18299951554">+18299951554</a></h6>
-            </div>
-          </div>
-
-          <div className="sidebar-button mobile-menu-btn ">
-            <span></span>
+        <div className="nav-right d-flex justify-content-end align-items-center">
+          <div className="sidebar-button mobile-menu-btn">
+            <i className="bi bi-list fs-1 text-white"></i>
           </div>
         </div>
       </header>
