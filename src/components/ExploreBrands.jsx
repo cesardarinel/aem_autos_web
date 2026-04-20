@@ -1,0 +1,52 @@
+import React from 'react';
+
+const ExploreBrands = () => {
+  const benefits = [
+    { 
+      icon: 'bi-lightning-charge-fill', 
+      title: 'Financiamiento Rápido', 
+      desc: 'Aprobación en menos de 24 horas con procesos simplificados.' 
+    },
+    { 
+      icon: 'bi-shield-check', 
+      title: 'Condiciones AAA+', 
+      desc: 'Todos nuestros vehículos pasan por una inspección rigurosa.' 
+    },
+    { 
+      icon: 'bi-person-check', 
+      title: 'Atención Personalizada', 
+      desc: 'Asesoría experta de principio a fin, adaptada a tus necesidades.' 
+    },
+    { 
+      icon: 'bi-file-earmark-check', 
+      title: 'Trámites Rápidos', 
+      desc: 'Gestionamos toda la documentación para tu comodidad.' 
+    }
+  ];
+
+  return (
+    <div className="explore-brand-section pt-100 pb-100 bg-light-gray" id="beneficios">
+      <div className="container">
+        <div className="section-title-2 text-center mb-50">
+          <span>Por qué elegirnos</span>
+          <h2>Beneficios de comprar en AEM Autos</h2>
+        </div>
+        <div className="row g-4">
+          {benefits.map((b, i) => (
+            <div key={i} className="col-lg-3 col-md-6 text-center">
+              <div className="card h-100 p-4 border-0 shadow-sm rounded-4 brand-card" style={{ transition: '0.3s' }}>
+                <div className="icon mb-4 d-flex justify-content-center align-items-center mx-auto" style={{ width: '80px', height: '80px', backgroundColor: 'rgba(45, 114, 176, 0.1)', borderRadius: '50%' }}>
+                  <i className={`bi ${b.icon}`} style={{ fontSize: '2.5rem', color: '#2D72B0' }}></i>
+                </div>
+                <h4 className="mb-2" style={{ color: '#0D3B66', fontSize: '1.2rem', fontWeight: '700' }}>{b.title}</h4>
+                <p className="text-muted mb-0" style={{ fontSize: '0.9rem', lineHeight: '1.5' }}>{b.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ExploreBrands;
