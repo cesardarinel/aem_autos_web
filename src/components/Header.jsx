@@ -37,12 +37,12 @@ const Header = () => {
       {/* Header Area & Main Menu Sticky */}
       <header className="header-area style-1 sticky-header">
         <div className="header-logo d-lg-none d-flex justify-content-center py-2 bg-white">
-          <a href="/"><img src="/logo.png" alt="Logo" style={{ height: '40px' }} /></a>
+          <a href="/"><img src="/assets/images/logos/logo.png" alt="Logo" style={{ height: '40px' }} /></a>
         </div>
         <div className="main-menu">
           <div className="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
             <div className="mobile-logo-wrap">
-              <a href="/"><img className="img-fluid" src="/logo.png" alt="Logo" style={{ height: '40px' }} /></a>
+              <a href="/"><img className="img-fluid" src="/assets/images/logos/logo.png" alt="Logo" style={{ height: '40px' }} /></a>
             </div>
           </div>
           <div className="menu-main-menu-container">
