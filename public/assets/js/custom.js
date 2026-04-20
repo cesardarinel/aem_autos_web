@@ -133,8 +133,9 @@
 		time: 1000
 	});
 
-	$('.sidebar-button').click(function () {
+	$(document).on('click', '.sidebar-button', function () {
 		$(this).toggleClass('active');
+		$('.main-menu, .sidebar-menu').toggleClass('show-menu');
 	});
 
 	// Preloader
@@ -1468,10 +1469,7 @@
 	});
 
 
-	document.querySelector('.sidebar-button').addEventListener('click', () =>
-		document.querySelector('.main-menu, .sidebar-menu').classList.toggle('show-menu'));
-
-	$('.menu-close-btn').on("click", function () {
+	$(document).on("click", ".menu-close-btn", function () {
 		$('.sidebar-menu').removeClass('show-menu');
 	});
 
