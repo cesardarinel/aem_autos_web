@@ -1,24 +1,23 @@
 import React from 'react';
-import { MessageCircle, Phone } from 'lucide-react';
 
 const FloatingButtons = () => {
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+    <div className="floating-container d-md-none">
       <a 
-        href="https://wa.me/18299951554" 
+        href="https://wa.me/18099973787" 
         target="_blank" 
         rel="noopener noreferrer" 
-        className="floating-btn bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 flex items-center justify-center"
+        className="floating-btn whatsapp"
         aria-label="Contactar por WhatsApp"
       >
-        <MessageCircle size={24} />
+        <i className="bi bi-whatsapp"></i>
       </a>
       <a 
-        href="tel:+18299951554" 
-        className="floating-btn bg-brand-navy hover:bg-brand-metal text-white p-4 rounded-full shadow-2xl transition-all duration-300 flex items-center justify-center"
+        href="tel:+18099973787" 
+        className="floating-btn phone"
         aria-label="Llamar ahora"
       >
-        <Phone size={24} />
+        <i className="bi bi-telephone-fill"></i>
       </a>
     </div>
   );

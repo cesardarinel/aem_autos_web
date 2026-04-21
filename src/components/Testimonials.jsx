@@ -1,83 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import { Star, User } from 'lucide-react';
+import React from 'react';
 
 const Testimonials = () => {
-  const [current, setCurrent] = useState(0);
-  const total = 3;
-
-  const testimonials = [
-    {
-      text: '"Excelente servicio y atención rápida. Conseguí financiamiento en menos de 24 horas y el vehículo estaba en condiciones impecables. ¡Muy recomendados!"',
-      author: 'Carlos M.',
-      location: 'Santiago, RD'
-    },
-    {
-      text: '"Vehículos en muy buenas condiciones y transparencia total en el proceso. El equipo de AEM me asesoró perfectamente para elegir el auto ideal para mi familia."',
-      author: 'María L.',
-      location: 'Santiago, RD'
-    },
-    {
-      text: '"Compré mi Jeep Grand Cherokee con AEM Autos y fue la mejor experiencia. Trámites rápidos, precio justo y un vehículo que superó mis expectativas."',
-      author: 'Roberto F.',
-      location: 'Santiago, RD'
-    }
+  const reviews = [
+    { id: 1, user: 'Juan Pérez', comment: 'Excelente servicio y vehículos en óptimas condiciones. Muy transparentes.', stars: 5 },
+    { id: 2, user: 'María García', comment: 'La mejor experiencia comprando mi primer auto importado. Santiago tiene al mejor dealer.', stars: 5 },
+    { id: 3, user: 'Carlos Ruiz', comment: 'Calidad AAA+ garantizada. El proceso de financiamiento fue súper rápido.', stars: 5 }
   ];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % total);
-    }, 8000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <section className="py-20 bg-brand-silver/30 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="text-brand-metal font-semibold uppercase tracking-wider text-sm">Testimonios</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4 text-brand-dark">Lo que dicen nuestros clientes</h2>
+    <div className="testimonial-section py-5 bg-light">
+      <div className="container">
+        <div className="row justify-content-center mb-5">
+          <div className="col-lg-8 text-center">
+            <h2 className="fw-bold">Lo que dicen nuestros clientes</h2>
+            <p className="text-muted">Nuestra reputación se basa en la satisfacción de quienes confían en nosotros.</p>
+          </div>
         </div>
-
-        <div className="max-w-4xl mx-auto">
-          <div 
-            className="testimonial-track" 
-            style={{ transform: `translateX(-${current * 100}%)` }}
-          >
-            {testimonials.map((t, i) => (
-              <div key={i} className="w-full flex-shrink-0 px-4">
-                <div className="bg-white rounded-3xl p-8 border border-brand-silver shadow-lg text-center">
-                  <div className="flex justify-center mb-4">
-                    {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                    ))}
+        <div className="row g-4">
+          {reviews.map(review => (
+            <div key={review.id} className="col-md-4">
+              <div className="card h-100 border-0 shadow-sm p-4">
+                <div className="mb-3">
+                  {[...Array(review.stars)].map((_, i) => (
+                    <i key={i} className="bi bi-star-fill text-warning me-1"></i>
+                  ))}
+                </div>
+                <p className="fst-italic text-muted mb-4">"{review.comment}"</p>
+                <div className="d-flex align-items-center gap-3">
+                  <div className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style={{width: '40px', height: '40px'}}>
+                    <i className="bi bi-person-fill"></i>
                   </div>
-                  <p className="text-lg text-gray-700 italic mb-6">{t.text}</p>
-                  <div className="flex items-center justify-center gap-3">
-                    <div className="w-12 h-12 bg-brand-navy/10 rounded-full flex items-center justify-center">
-                      <User className="w-6 h-6 text-brand-navy" />
-                    </div>
-                    <div className="text-left">
-                      <p className="font-semibold text-brand-dark">{t.author}</p>
-                      <p className="text-sm text-gray-500">{t.location}</p>
-                    </div>
-                  </div>
+                  <h6 className="mb-0 fw-bold">{review.user}</h6>
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className="flex justify-center gap-2 mt-8">
-            {testimonials.map((_, i) => (
-              <button 
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`w-3 h-3 rounded-full transition-colors ${current === i ? 'bg-brand-metal' : 'bg-brand-silver'}`}
-              />
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -50,7 +50,15 @@ const LatestCars = () => {
             <div key={car.id} className="col-lg-4 col-md-6">
               <div className="product-card4 style-3">
                 <div className="product-img">
-                  <img src={car.image} alt={car.name} className="img-fluid" style={{ height: '250px', objectFit: 'cover' }} />
+                  <img 
+                    src={car.image} 
+                    alt={`Vehículo ${car.name} en venta`} 
+                    className="img-fluid" 
+                    width="600" 
+                    height="400" 
+                    loading="lazy" 
+                    style={{ height: '250px', objectFit: 'cover', width: '100%' }} 
+                  />
                   <div className="number-of-img">
                     <a href="#"><img src="/assets/images/icons/gallery-icon-1.svg" alt="gallery" /> 1</a>
                   </div>

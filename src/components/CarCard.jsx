@@ -1,34 +1,38 @@
 import React from 'react';
-import { Gauge, Fuel, ArrowRight } from 'lucide-react';
 
 const CarCard = ({ car }) => {
   return (
-    <div className="vehicle-card bg-white rounded-2xl overflow-hidden border border-brand-silver shadow-lg">
-      <div className="relative">
-        <img src={car.image} alt={car.name} className="w-full h-56 object-cover" />
-        <div className="absolute top-4 right-4 bg-brand-metal text-white text-xs font-bold px-3 py-1 rounded-full">AAA+</div>
+    <div className="product-card4 style-3 shadow-sm h-100">
+      <div className="product-img">
+        <img 
+          src={car.image} 
+          alt={car.name} 
+          className="img-fluid" 
+          style={{ height: '220px', objectFit: 'cover', width: '100%' }} 
+          width="400"
+          height="250"
+          loading="lazy"
+        />
+        <div className="number-of-img">
+           <i className="bi bi-camera me-1"></i> 1
+        </div>
       </div>
-      <div className="p-6">
-        <div className="flex justify-between items-start mb-3">
-          <div>
-            <h3 className="text-xl font-bold text-brand-dark">{car.name}</h3>
-            <p className="text-gray-500 text-sm">{car.year} • {car.transmission} • {car.engine}</p>
+      <div className="product-content p-4">
+        <div className="location text-muted small mb-2">
+          <i className="bi bi-geo-alt me-1"></i> {car.location || 'Santiago, RD'}
+        </div>
+        <h6 className="mb-3"><a href="#" className="text-decoration-none text-dark fw-bold">{car.name} - {car.year}</a></h6>
+        <ul className="list-unstyled d-flex gap-3 mb-4 small text-muted">
+          <li><i className="bi bi-speedometer2 me-1"></i> {car.mileage}</li>
+          <li><i className="bi bi-fuel-pump me-1"></i> Gasolina</li>
+        </ul>
+        <div className="d-flex justify-content-between align-items-center">
+          <a className="btn btn-sm btn-primary" href={`https://wa.me/18299951554?text=Me%20interesa%20el%20${car.name}`}>Detalles</a>
+          <div className="price-area text-end">
+            <span className="small d-block text-muted">Precio</span>
+            <h6 className="mb-0 fw-bold text-primary">{car.price}</h6>
           </div>
-          <span className="text-brand-navy font-bold text-xl">{car.price}</span>
         </div>
-        <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-          <span className="flex items-center gap-1"><Gauge size={16} /> {car.mileage}</span>
-          <span className="flex items-center gap-1"><Fuel size={16} /> {car.fuel}</span>
-        </div>
-        <a 
-          href={`https://wa.me/18299951554?text=Me%20interesa%20el%20${encodeURIComponent(car.name)}`} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="btn-primary-custom w-full bg-brand-navy hover:bg-brand-metal text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2"
-        >
-          Más información
-          <ArrowRight size={16} />
-        </a>
       </div>
     </div>
   );

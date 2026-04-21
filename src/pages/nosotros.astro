@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import AboutUs from '../components/AboutUs';
+import HowItWorks from '../components/HowItWorks';
+import Testimonials from '../components/Testimonials';
+import FloatingButtons from '../components/FloatingButtons';
+---
+
+<Layout title="Sobre Nosotros | AEM Autos">
+  <Header />
+  
+  <main>
+    <!-- Sección de Historia y Estadísticas -->
+    <div class="pt-5 mt-5">
+      <AboutUs />
+    </div>
+
+    <!-- Sección de Proceso (Cómo trabajamos) -->
+    <div class="bg-light py-5">
+      <HowItWorks />
+    </div>
+
+    <!-- Sección de Testimonios -->
+    <Testimonials />
+    
+    <!-- CTA Final -->
+    <div class="py-5 text-center">
+      <div class="container">
+        <h3 class="fw-bold mb-4">¿Quieres saber más?</h3>
+        <a href="/contacto" class="btn btn-primary btn-lg px-5 py-3 fw-bold">HABLA CON UN ASESOR</a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <FloatingButtons client:idle />
+</Layout>
+ />
+  <FloatingButtons client:idle />
+</Layout>

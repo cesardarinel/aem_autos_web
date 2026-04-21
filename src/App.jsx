@@ -9,6 +9,7 @@ import HowItWorks from './components/HowItWorks';
 import Footer from './components/Footer';
 import ContactUs from './components/ContactUs';
 import FinancingPage from './components/FinancingPage';
+import FloatingButtons from './components/FloatingButtons';
 
 function App() {
   const [view, setView] = useState('home');
@@ -48,6 +49,7 @@ function App() {
         {view === 'financing' && <div data-aos="fade-in"><FinancingPage /></div>}
       </main>
       <Footer />
+      <FloatingButtons />
     </div>
   );
 }

@@ -1,3 +1,11 @@
+/* 0. FUENTES Y OPTIMIZACIÓN */
+@font-face {
+  font-family: 'bootstrap-icons';
+  src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2?dd670303893325c79316538a74e5b62b") format("woff2"),
+       url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff?dd670303893325c79316538a74e5b62b") format("woff");
+  font-display: swap;
+}
+
 :root {
   --brand-navy: #0D3B66;
   --brand-metal: #2D72B0;
@@ -108,11 +116,62 @@ button[type="submit"]::before, button[type="submit"]::after {
   z-index: 1000 !important;
   background-color: var(--brand-navy) !important;
   width: 100% !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+}
+
+@media (max-width: 991px) {
+  .header-area.style-1 {
+    padding: 10px 20px !important;
+  }
+
+  .header-logo {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .nav-right {
+    position: relative;
+    z-index: 1001;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+  }
 }
 
 .main-menu {
   background-color: var(--brand-navy) !important;
   width: 100% !important;
+}
+
+@media (max-width: 991px) {
+  .main-menu {
+    width: 280px !important; /* Fix for mobile menu width */
+    background-color: #FFFFFF !important; /* Mobile menu usually light background */
+  }
+  
+  .main-menu .menu-list > li > a {
+    color: var(--brand-navy) !important;
+    padding: 15px 20px !important;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .mobile-menu-btn i {
+    display: none !important; /* Hide bi-list icon if we want to use theme's span lines */
+  }
+  
+  .mobile-menu-btn span {
+    display: block !important;
+    visibility: visible !important;
+  }
 }
 
 .menu-list > li > a {
@@ -143,4 +202,107 @@ button[type="submit"]::before, button[type="submit"]::after {
 }
 .primary-btn1 i, .search-area button i, button i {
   color: #FFFFFF !important;
+}
+
+/* 6. FLOATING BUTTONS (MOBILE OPTIMIZATION) */
+.floating-container {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999;
+}
+
+.floating-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  font-size: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+}
+
+.floating-btn.whatsapp {
+  background-color: #25D366;
+}
+
+.floating-btn.phone {
+  background-color: var(--brand-metal);
+}
+
+/* 7. PREVENT HORIZONTAL SCROLL & RESPONSIVE FIXES */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.App {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Ensure images don't cause overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for horizontal scroll caused by AOS animations or rows */
+.row {
+  --bs-gutter-x: 1.5rem;
+  width: 100%;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+@media (max-width: 576px) {
+  .container, .container-fluid {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/* 8. HERO BANNER MOBILE OPTIMIZATION */
+@media (max-width: 767px) {
+  .hero-banner-img {
+    transform: scale(1.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-img-wrap {
+    margin-left: -10px;
+    margin-right: -10px;
+    overflow: visible;
+  }
+
+  .sales-badge {
+    transform: scale(0.9);
+    bottom: -10px !important;
+    left: -10px !important;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner-img {
+    transform: scale(1.15);
+  }
+  
+  .hero-img-wrap {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 }

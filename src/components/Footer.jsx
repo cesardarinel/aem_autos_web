@@ -17,10 +17,10 @@ const Footer = () => {
               <a href="https://instagram.com/aemautosrd" target="_blank" rel="noreferrer" aria-label="Instagram">
                 <i className="bi bi-instagram"></i>
               </a>
-              <a href="https://wa.me/18299951554" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+              <a href="https://wa.me/18099973787" target="_blank" rel="noreferrer" aria-label="WhatsApp">
                 <i className="bi bi-whatsapp"></i>
               </a>
-              <a href="tel:+18299951554" aria-label="Phone">
+              <a href="tel:+18099973787" aria-label="Phone">
                 <i className="bi bi-telephone-fill"></i>
               </a>
             </div>
@@ -29,10 +29,10 @@ const Footer = () => {
           <div className="col-lg-2 col-md-6">
             <h5 className="footer-title mb-4">Enlaces Rápidos</h5>
             <ul className="footer-links list-unstyled p-0">
-              <li className="mb-2"><a href="#inicio" className="text-decoration-none">Inicio</a></li>
-              <li className="mb-2"><a href="#vehiculos" className="text-decoration-none">Vehículos</a></li>
-              <li className="mb-2"><a href="#beneficios" className="text-decoration-none">Beneficios</a></li>
-              <li className="mb-2"><a href="#nosotros" className="text-decoration-none">Nosotros</a></li>
+              <li className="mb-2"><a href="/" className="text-decoration-none">Inicio</a></li>
+              <li className="mb-2"><a href="/#vehiculos" className="text-decoration-none">Vehículos</a></li>
+              <li className="mb-2"><a href="/nosotros" className="text-decoration-none">Nosotros</a></li>
+              <li className="mb-2"><a href="/financiamiento" className="text-decoration-none">Financiamiento</a></li>
             </ul>
           </div>
           
@@ -45,7 +45,7 @@ const Footer = () => {
               </li>
               <li className="mb-2 d-flex align-items-center gap-2">
                 <i className="bi bi-clock"></i>
-                <span>Lun - Dom: 9:00 AM - 7:00 PM</span>
+                <span>Lun - Dom: 9:00 AM en adelante</span>
               </li>
             </ul>
           </div>
@@ -54,16 +54,16 @@ const Footer = () => {
             <h5 className="footer-title mb-4">Contacto Directo</h5>
             <ul className="footer-links list-unstyled p-0">
               <li className="mb-3 d-flex align-items-center gap-2">
-                <i className="bi bi-telephone-plus"></i>
-                <a href="tel:+18299951554" className="text-decoration-none">(829) 995-1554</a>
+                <i className="bi bi-whatsapp"></i>
+                <a href="tel:+18099973787" className="text-decoration-none">(809) 997-3787</a>
               </li>
               <li className="mb-3 d-flex align-items-center gap-2">
                 <i className="bi bi-telephone"></i>
-                <a href="tel:+18099973787" className="text-decoration-none">(809) 997-3787</a>
+                <a href="tel:+18299823787" className="text-decoration-none">(829) 982-3787</a>
               </li>
               <li className="d-flex align-items-center gap-2">
                 <i className="bi bi-envelope"></i>
-                <span>info@aemautos.com.do</span>
+                <a href="mailto:aemautosrd@gmail.com" className="text-decoration-none">aemautosrd@gmail.com</a>
               </li>
             </ul>
           </div>

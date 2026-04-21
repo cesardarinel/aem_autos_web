@@ -1,39 +1,54 @@
 import React from 'react';
 
-const AboutUs = () => {
+const HowItWorks = () => {
+  const steps = [
+    {
+      number: '01',
+      title: 'Selección AAA+',
+      desc: 'Elige entre nuestro inventario de vehículos certificados o solicita una importación directa de USA.'
+    },
+    {
+      number: '02',
+      title: 'Trámite y Financiamiento',
+      desc: 'Gestionamos todo el papeleo y te conseguimos la mejor tasa del mercado con bancos locales.'
+    },
+    {
+      number: '03',
+      title: 'Entrega Garantizada',
+      desc: 'Recibe tu vehículo en tiempo récord, listo para disfrutar con garantía y transparencia total.'
+    }
+  ];
+
   return (
-    <div className="how-it-work-section pt-100 pb-100" id="nosotros">
+    <div className="how-it-work-section py-5" id="proceso">
       <div className="container">
-        <div className="row align-items-center">
-          <div className="col-lg-6">
-            <div className="section-title mb-4">
-              <span>Sobre Nosotros</span>
-              <h2>Tu próximo vehículo está más cerca de lo que imaginas</h2>
-            </div>
-            <p className="mb-4">En <strong>AEM Autos</strong>, somos un concesionario especializado en vehículos importados americanos ubicado en Santiago, República Dominicana. Nos dedicamos a ofrecer automóviles en condiciones AAA+, con transparencia y profesionalismo.</p>
-            <p className="mb-4">Con más de 410 publicaciones en Instagram y una calificación de 5.0 estrellas en Google, nuestra reputación se construye sobre la confianza, la calidad y la rapidez.</p>
-            <div className="row g-3">
-              <div className="col-6">
-                <div className="card p-3 text-center border">
-                  <h3 className="mb-0">5.0</h3>
-                  <p className="small mb-0">Estrellas en Google</p>
+        <div className="row justify-content-center mb-5">
+          <div className="col-lg-8 text-center">
+            <span className="text-primary font-weight-bold text-uppercase small">Nuestro Proceso</span>
+            <h2 className="display-6 fw-bold mt-2">¿Cómo trabajamos en AEM Autos?</h2>
+          </div>
+        </div>
+        <div className="row g-4">
+          {steps.map((step, index) => (
+            <div key={index} className="col-lg-4">
+              <div className="p-5 bg-white rounded-4 shadow-sm border h-100 text-center position-relative overflow-hidden">
+                <div className="display-1 fw-bold text-light position-absolute" style={{ top: '-10px', right: '10px', zIndex: 0, opacity: 0.5 }}>
+                  {step.number}
+                </div>
+                <div className="position-relative" style={{ zIndex: 1 }}>
+                  <div className="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style={{ width: '60px', height: '60px' }}>
+                    <i className={`bi bi-${index + 1}-circle fs-3`}></i>
+                  </div>
+                  <h4 className="fw-bold mb-3">{step.title}</h4>
+                  <p className="text-muted mb-0">{step.desc}</p>
                 </div>
               </div>
-              <div className="col-6">
-                <div className="card p-3 text-center border">
-                  <h3 className="mb-0">410+</h3>
-                  <p className="small mb-0">Vehículos gestionados</p>
-                </div>
-              </div>
             </div>
-          </div>
-          <div className="col-lg-6 mt-4 mt-lg-0">
-            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80" className="img-fluid rounded-3 shadow" alt="About Us" />
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 
-export default AboutUs;
+export default HowItWorks;

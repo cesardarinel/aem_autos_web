@@ -1,18 +1,25 @@
 import React from 'react';
-import { Zap, ShieldCheck } from 'lucide-react';
 
 const FinancingBanner = () => {
   return (
-    <section className="bg-gradient-to-r from-brand-navy to-brand-metal py-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
-          <div className="flex items-center gap-3">
-            <Zap className="w-6 h-6 text-white" />
-            <span className="text-white font-bold text-lg">Financiamiento en menos de 24 horas</span>
+    <section className="bg-primary py-4 rounded-4 shadow-sm my-5 text-white">
+      <div className="container">
+        <div className="row align-items-center text-center text-md-start">
+          <div className="col-md-8">
+            <h3 className="fw-bold mb-1">Financiamiento disponible</h3>
+            <p className="mb-0 opacity-75">Obtén tu vehículo AAA+ con las mejores tasas del mercado.</p>
           </div>
-          <div className="flex items-center gap-3">
-            <ShieldCheck className="w-6 h-6 text-white" />
-            <span className="text-white/90">Aprobación rápida • Sin complicaciones</span>
+          <div className="col-md-4 text-md-end mt-3 mt-md-0">
+            <div className="d-flex justify-content-center justify-content-md-end gap-4">
+              <div className="d-flex align-items-center gap-2">
+                <i className="bi bi-zap-fill fs-4"></i>
+                <span className="small fw-bold">Aprobación rápida</span>
+              </div>
+              <div className="d-flex align-items-center gap-2">
+                <i className="bi bi-shield-check fs-4"></i>
+                <span className="small fw-bold">Garantía total</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

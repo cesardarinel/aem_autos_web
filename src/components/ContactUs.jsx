@@ -11,8 +11,8 @@ const ContactUs = () => {
                 <i className="bi bi-telephone" style={{ fontSize: '1.5rem', color: '#2D72B0' }}></i>
               </div>
               <h4 className="fw-bold">Teléfonos</h4>
-              <p className="mb-1">(829) 995-1554</p>
-              <p>(809) 997-3787</p>
+              <p className="mb-1">(809) 997-3787</p>
+              <p>(829) 982-3787</p>
             </div>
           </div>
           <div className="col-lg-4 col-md-6">
