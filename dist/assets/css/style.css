@@ -10902,7 +10902,7 @@ header.style-6 .main-menu .hotline-area .content h6 a {
 }
 .brand-category-area .single-category1::after {
   content: "";
-  background-image: url(/assets/images/home1/category1-bg.png);
+  background-image: url(../img/home1/category1-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -10936,7 +10936,7 @@ header.style-6 .main-menu .hotline-area .content h6 a {
   opacity: 0.5;
 }
 .brand-category-area .slick-arrow::before {
-  content: url(/assets/images/home1/icon/arrow-left.svg);
+  content: url(../img/home1/icon/arrow-left.svg);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -10955,7 +10955,7 @@ header.style-6 .main-menu .hotline-area .content h6 a {
   right: 12px;
 }
 .brand-category-area .slick-next::before {
-  content: url(/assets/images/home1/icon/arrow-right.svg);
+  content: url(../img/home1/icon/arrow-right.svg);
 }
 
 /*=====================================
@@ -12058,7 +12058,7 @@ header.style-6 .main-menu .hotline-area .content h6 a {
      12. Compare Car With Brand Section
 ========================================*/
 .compare-car-section .single-compare-card {
-  background-image: url(/assets/images/home1/compare-bg.png), linear-gradient(#F6F4Fa, #F6F4Fa);
+  background-image: url(../img/home1/compare-bg.png), linear-gradient(#F6F4Fa, #F6F4Fa);
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;
@@ -12645,7 +12645,7 @@ header.style-6 .main-menu .hotline-area .content h6 a {
   cursor: pointer;
 }
 .shop-car-parts-section .shop-big-img > ul > li .dot-main::after {
-  content: url(/assets/images/home1/icon/shop-vec.svg);
+  content: url(../img/home1/icon/shop-vec.svg);
   position: absolute;
   left: 5px;
   bottom: 0px;
@@ -12655,7 +12655,7 @@ header.style-6 .main-menu .hotline-area .content h6 a {
   transform-origin: left;
 }
 .shop-car-parts-section .shop-big-img > ul > li .dot-main.left::after {
-  content: url(/assets/images/home1/icon/shop-vec2.svg);
+  content: url(../img/home1/icon/shop-vec2.svg);
   position: absolute;
   right: 5px;
   left: unset;
@@ -12888,7 +12888,7 @@ header.style-6 .main-menu .hotline-area .content h6 a {
      14. Testimonial Section
 ========================================*/
 .customar-feedback-area .customer-feedback-left {
-  background-image: url(/assets/images/home1/customer-feedbac-bg1.png);
+  background-image: url(../img/home1/customer-feedbac-bg1.png);
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid #EEEEEE;
@@ -14597,7 +14597,7 @@ footer.style-3 .footer-btm .social-area ul li a:hover {
    23. Home2 Compar Section
 ========================================*/
 .home2-compare-area {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/home2/compire-bg.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/home2/compire-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 90px;
@@ -15804,7 +15804,7 @@ footer.style-3 .footer-btm .social-area ul li a:hover {
    30. Home3 Compare Section
 ========================================*/
 .home3-compare-section {
-  background-image: url(/assets/images/home1/why-choose-bg.png);
+  background-image: url(../img/home1/why-choose-bg.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16398,7 +16398,7 @@ footer.style-3 .footer-btm .social-area ul li a:hover {
   line-height: 20px;
 }
 .home3-available-car .car-filter-area {
-  background-image: url(/assets/images/home4/search-area-bg.png), linear-gradient(180deg, #f6f4fa 0%, #f6f4fa 100%);
+  background-image: url(../img/home4/search-area-bg.png), linear-gradient(180deg, #f6f4fa 0%, #f6f4fa 100%);
   background-size: cover;
   background-repeat: no-repeat;
   padding: 40px 60px 140px;
@@ -17964,7 +17964,7 @@ footer.style-3 .footer-btm .social-area ul li a:hover {
   top: -84px;
 }
 .home5-recent-car-section .slick-arrow.slick-prev::before {
-  content: url(/assets/images/home5/icon/slick-prev.svg);
+  content: url(../img/home5/icon/slick-prev.svg);
   opacity: 0.16;
   transition: 0.35s;
 }
@@ -17975,7 +17975,7 @@ footer.style-3 .footer-btm .social-area ul li a:hover {
   top: -84px;
 }
 .home5-recent-car-section .slick-arrow.slick-next::before {
-  content: url(/assets/images/home5/icon/slick-next.svg);
+  content: url(../img/home5/icon/slick-next.svg);
   opacity: 0.16;
   transition: 0.35s;
 }
@@ -18540,7 +18540,7 @@ footer.style-3 .footer-btm .social-area ul li a:hover {
   top: -84px;
 }
 .home5-compare-car-section .slick-arrow.slick-prev::before {
-  content: url(/assets/images/home5/icon/slick-prev.svg);
+  content: url(../img/home5/icon/slick-prev.svg);
   opacity: 0.16;
   transition: 0.35s;
 }
@@ -18551,7 +18551,7 @@ footer.style-3 .footer-btm .social-area ul li a:hover {
   top: -84px;
 }
 .home5-compare-car-section .slick-arrow.slick-next::before {
-  content: url(/assets/images/home5/icon/slick-next.svg);
+  content: url(../img/home5/icon/slick-next.svg);
   opacity: 0.16;
   transition: 0.35s;
 }
@@ -21123,7 +21123,7 @@ button {
   background-color: #F6F4Fa;
   background-size: cover;
   background-position: center center;
-  background-image: url(/assets/images/inner-page/inquiry-bg.jpg);
+  background-image: url(../img/inner-page/inquiry-bg.jpg);
 }
 @media (max-width: 767px) {
   .car-details-sidebar .inquiry-form {
@@ -21999,7 +21999,7 @@ button {
   border-radius: 2px;
 }
 .product-sidebar .product-widget .check-box-item .checkbox-container > ul > li .containerss input:checked ~ .checkmark::after {
-  content: url(/assets/images/inner-page/icon/checkbox-check.svg);
+  content: url(../img/inner-page/icon/checkbox-check.svg);
   left: 1.5px;
   top: -2px;
   position: absolute;
@@ -22740,7 +22740,7 @@ button {
 }
 
 .sidebar-banner {
-  background-image: url(/assets/images/inner-page/product-wd-bg.png), linear-gradient(#F6F4Fa, #F6F4Fa);
+  background-image: url(../img/inner-page/product-wd-bg.png), linear-gradient(#F6F4Fa, #F6F4Fa);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -23013,7 +23013,7 @@ button {
 }
 .blog-details-page blockquote:before {
   position: absolute;
-  content: url(/assets/images/qoute.svg);
+  content: url(../img/qoute.svg);
   left: 58px;
   top: -23px;
   width: 46px;
@@ -23302,7 +23302,7 @@ button {
   border-radius: 2px;
 }
 .comment-respond .form-inner label.containerss input:checked ~ .checkmark::after {
-  content: url(/assets/images/inner-page/icon/checkbox-check.svg);
+  content: url(../img/inner-page/icon/checkbox-check.svg);
   left: 1.5px;
   top: -2px;
   position: absolute;
@@ -23467,7 +23467,7 @@ button {
 }
 .post-quote blockquote:before {
   position: absolute;
-  content: url(/assets/images/qoute.svg);
+  content: url(../img/qoute.svg);
   left: 58px;
   top: -23px;
   width: 46px;
@@ -23589,7 +23589,7 @@ button {
 }
 
 .toprated-used-cars {
-  background-image: url(/assets/images/inner-page/toprated-used-cars.png);
+  background-image: url(../img/inner-page/toprated-used-cars.png);
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 80px;
@@ -23666,7 +23666,7 @@ button {
   height: 100%;
 }
 .product-category-page .single-category-wrap .category-card .category-img {
-  background-image: url(/assets/images/inner-page/category-bg.png);
+  background-image: url(../img/inner-page/category-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -23729,7 +23729,7 @@ button {
 }
 
 .compare-page .product-upload-area {
-  background-image: url(/assets/images/inner-page/compare-bg.png);
+  background-image: url(../img/inner-page/compare-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
@@ -24263,7 +24263,7 @@ button {
   border-radius: 2px;
 }
 .checkout-page .inquiry-form .form-inner label.containerss input:checked ~ .checkmark::after {
-  content: url(/assets/images/inner-page/icon/checkbox-check.svg);
+  content: url(../img/inner-page/icon/checkbox-check.svg);
   left: 1.5px;
   top: -3px;
   position: absolute;
@@ -25016,7 +25016,7 @@ button {
   border-radius: 2px;
 }
 .contact-page .inquiry-form .form-inner label.containerss input:checked ~ .checkmark::after {
-  content: url(/assets/images/inner-page/icon/checkbox-check.svg);
+  content: url(../img/inner-page/icon/checkbox-check.svg);
   left: 1.5px;
   top: -3px;
   position: absolute;
@@ -25389,7 +25389,7 @@ button {
   height: 100%;
 }
 .product-category-page .single-category-wrap .category-card .category-img {
-  background-image: url(/assets/images/inner-page/category-bg.png);
+  background-image: url(../img/inner-page/category-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -25452,7 +25452,7 @@ button {
 }
 
 .compare-page .product-upload-area {
-  background-image: url(/assets/images/inner-page/compare-bg.png);
+  background-image: url(../img/inner-page/compare-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
@@ -25986,7 +25986,7 @@ button {
   border-radius: 2px;
 }
 .checkout-page .inquiry-form .form-inner label.containerss input:checked ~ .checkmark::after {
-  content: url(/assets/images/inner-page/icon/checkbox-check.svg);
+  content: url(../img/inner-page/icon/checkbox-check.svg);
   left: 1.5px;
   top: -3px;
   position: absolute;
@@ -26755,7 +26755,7 @@ button {
   border-radius: 2px;
 }
 .contact-page .inquiry-form .form-inner label.containerss input:checked ~ .checkmark::after {
-  content: url(/assets/images/inner-page/icon/checkbox-check.svg);
+  content: url(../img/inner-page/icon/checkbox-check.svg);
   left: 1.5px;
   top: -3px;
   position: absolute;
