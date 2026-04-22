@@ -38,7 +38,7 @@ const getActiveClass = (path) => {
             <i class="bi bi-whatsapp me-2"></i> WHATSAPP
           </a>
         </li>
-        <li class="d-none d-sm-block">
+        <li>
           <a class="primary-btn1" href="tel:+18299823787">
             <i class="bi bi-telephone-fill me-2"></i> LLAMAR
           </a>
@@ -50,23 +50,22 @@ const getActiveClass = (path) => {
 
 <header class="header-area style-1 sticky-header" id="main-header">
   <div class="container-fluid d-lg-none">
-    <div class="d-flex justify-content-between align-items-center py-2">
+    <div class="d-flex justify-content-between align-items-center py-2 px-1">
+      <div class="header-logo">
+        <a href="/"><img src="/assets/images/logos/logo-footer.webp" alt="Logo" style="height: 40px;" /></a>
+      </div>
       <div class="mobile-menu-btn-wrapper">
         <div class="sidebar-button mobile-menu-btn" id="menu-toggle">
           <span></span>
         </div>
       </div>
-      <div class="header-logo">
-        <a href="/"><img src="/assets/images/logos/logo-footer.webp" alt="Logo" style="height: 45px;" /></a>
-      </div>
-      <div style="width: 40px;"></div> {/* Espaciador para equilibrar el centrado */}
     </div>
   </div>
   
   <div class="main-menu" id="mobile-menu">
     <div class="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
       <div class="mobile-logo-wrap">
-        <a href="/"><img class="img-fluid" src="/assets/images/logos/logo-footer.webp" alt="Logo" style="height: 55px;" /></a>
+        <a href="/"><img class="img-fluid" src="/assets/images/logos/logo-footer.webp" alt="Logo" style="height: 45px;" /></a>
       </div>
       <div class="menu-close-btn" id="close-menu">
          <i class="bi bi-x-lg fs-2 text-dark"></i>
@@ -84,33 +83,61 @@ const getActiveClass = (path) => {
   </div>
 
   <div class="nav-right d-none d-lg-flex justify-content-end align-items-center">
-    {/* Este bloque solo se ve en desktop si fuera necesario */}
   </div>
 </header>
 
 <style is:global>
-  /* Forzar color blanco en el menú hamburguesa móvil */
+  .mobile-menu-btn {
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .mobile-menu-btn span,
   .mobile-menu-btn span::before,
   .mobile-menu-btn span::after {
-    background-color: #ffffff !important;
-  }
-  
-  .mobile-menu-btn {
-    cursor: pointer;
-    width: 30px;
-    height: 20px;
-    position: relative;
     display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #ffffff !important;
+    position: absolute;
+    transition: all 0.3s ease;
   }
 
-  /* Ajustes de posición para el botón móvil */
+  .mobile-menu-btn span::before {
+    content: "";
+    top: -8px;
+  }
+
+  .mobile-menu-btn span::after {
+    content: "";
+    top: 8px;
+  }
+
+  .mobile-menu-btn.active span {
+    background-color: transparent !important;
+  }
+
+  .mobile-menu-btn.active span::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu-btn.active span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
   @media (max-width: 991px) {
     .header-area {
-      background-color: #000000; /* Aseguramos fondo oscuro para el logo-footer y el botón blanco */
+      background-color: #000000 !important;
     }
     .mobile-menu-btn-wrapper {
-      padding-left: 10px;
+      padding-right: 5px;
     }
   }
 </style>
