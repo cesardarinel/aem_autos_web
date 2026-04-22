@@ -1,4 +1,5 @@
 import React from 'react';
+import CarCard from './CarCard';
 
 const LatestCars = () => {
   const cars = [
@@ -48,45 +49,12 @@ const LatestCars = () => {
         <div className="row g-4">
           {cars.map(car => (
             <div key={car.id} className="col-lg-4 col-md-6">
-              <div className="product-card4 style-3">
-                <div className="product-img">
-                  <img 
-                    src={car.image} 
-                    alt={`Vehículo ${car.name} en venta`} 
-                    className="img-fluid" 
-                    width="600" 
-                    height="400" 
-                    loading="lazy" 
-                    style={{ height: '250px', objectFit: 'cover', width: '100%' }} 
-                  />
-                  <div className="number-of-img">
-                    <a href="#"><img src="/assets/images/icons/gallery-icon-1.svg" alt="gallery" /> 1</a>
-                  </div>
-                </div>
-                <div className="product-content">
-                  <div className="location">
-                    <i className="bi bi-geo-alt"></i> {car.location}
-                  </div>
-                  <h6><a href="#">{car.name} - {car.year}</a></h6>
-                  <ul className="features">
-                    <li><img src="/assets/images/icons/milage_icon.svg" alt="m" /> {car.mileage}</li>
-                    <li><img src="/assets/images/icons/info_icon.svg" alt="i" /> {car.transmission}</li>
-                    <li><img src="/assets/images/icons/engine_icon.svg" alt="e" /> Gasolina</li>
-                  </ul>
-                  <div className="button-and-price">
-                    <a className="primary-btn1" href={`https://wa.me/18299951554?text=Me%20interesa%20el%20${car.name}`}>Detalles</a>
-                    <div className="price-area">
-                      <span>Precio</span>
-                      <h6>{car.price}</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <CarCard car={car} />
             </div>
           ))}
         </div>
         <div className="text-center mt-50">
-          <a className="primary-btn1 px-5" href="https://www.corotos.com.do/shops/gerson-melvin-auto-import" target="_blank" rel="noreferrer">
+          <a className="primary-btn1 px-5" href="/vehiculos">
             VER CATÁLOGO COMPLETO <i className="bi bi-arrow-right-short ms-2"></i>
           </a>
         </div>

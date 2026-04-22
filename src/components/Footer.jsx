@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="row g-4 mb-5">
           <div className="col-lg-4 col-md-6">
             <div className="footer-logo mb-4">
-              <img src="/assets/images/logos/logo-footer.png" alt="AEM Autos" style={{ maxWidth: '180px' }} />
+              <img src="/assets/images/logos/logo-footer.webp" alt="AEM Autos" style={{ maxWidth: '180px' }} />
             </div>
             <p className="mb-4">
               Concesionario de vehículos importados americanos en Santiago, República Dominicana. 
@@ -20,7 +20,7 @@ const Footer = () => {
               <a href="https://wa.me/18099973787" target="_blank" rel="noreferrer" aria-label="WhatsApp">
                 <i className="bi bi-whatsapp"></i>
               </a>
-              <a href="tel:+18099973787" aria-label="Phone">
+              <a href="tel:+18299823787" aria-label="Phone">
                 <i className="bi bi-telephone-fill"></i>
               </a>
             </div>
@@ -54,15 +54,15 @@ const Footer = () => {
             <h5 className="footer-title mb-4">Contacto Directo</h5>
             <ul className="footer-links list-unstyled p-0">
               <li className="mb-3 d-flex align-items-center gap-2">
-                <i className="bi bi-whatsapp"></i>
-                <a href="tel:+18099973787" className="text-decoration-none">(809) 997-3787</a>
+                <i className="bi bi-whatsapp text-primary"></i>
+                <a href="https://wa.me/18099973787" className="text-decoration-none">(809) 997-3787</a>
               </li>
               <li className="mb-3 d-flex align-items-center gap-2">
-                <i className="bi bi-telephone"></i>
+                <i className="bi bi-telephone text-primary"></i>
                 <a href="tel:+18299823787" className="text-decoration-none">(829) 982-3787</a>
               </li>
               <li className="d-flex align-items-center gap-2">
-                <i className="bi bi-envelope"></i>
+                <i className="bi bi-envelope text-primary"></i>
                 <a href="mailto:aemautosrd@gmail.com" className="text-decoration-none">aemautosrd@gmail.com</a>
               </li>
             </ul>

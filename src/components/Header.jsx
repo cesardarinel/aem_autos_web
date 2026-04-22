@@ -30,7 +30,7 @@ const Header = ({ pathname }) => {
       <div className="top-bar">
         <div className="company-logo">
           <a href="/" title="AEM Autos">
-            <img className="img-fluid" src="/assets/images/logos/logo.png" alt="AEM Autos" style={{ width: '220px' }} />
+            <img className="img-fluid" src="/assets/images/logos/logo.webp" alt="AEM Autos" style={{ width: '220px' }} />
           </a>
         </div>
         <div className="search-area d-none d-md-block">
@@ -49,7 +49,7 @@ const Header = ({ pathname }) => {
               </a>
             </li>
             <li className="d-none d-sm-block">
-              <a className="primary-btn1" href="tel:+18099973787">
+              <a className="primary-btn1" href="tel:+18299823787">
                 <i className="bi bi-telephone-fill me-2"></i> LLAMAR
               </a>
             </li>
@@ -63,13 +63,13 @@ const Header = ({ pathname }) => {
         suppressHydrationWarning={true}
       >
         <div className="header-logo d-lg-none d-flex justify-content-center py-2">
-          <a href="/"><img src="/assets/images/logos/logo-footer.png" alt="Logo" style={{ height: '55px' }} /></a>
+          <a href="/"><img src="/assets/images/logos/logo-footer.webp" alt="Logo" style={{ height: '55px' }} /></a>
         </div>
         
         <div className={`main-menu ${isMenuOpen ? 'show-menu' : ''}`}>
           <div className="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
             <div className="mobile-logo-wrap">
-              <a href="/"><img className="img-fluid" src="/assets/images/logos/logo-footer.png" alt="Logo" style={{ height: '55px' }} /></a>
+              <a href="/"><img className="img-fluid" src="/assets/images/logos/logo-footer.webp" alt="Logo" style={{ height: '55px' }} /></a>
             </div>
             <div className="menu-close-btn" onClick={closeMenu}>
                <i className="bi bi-x-lg fs-2 text-dark"></i>

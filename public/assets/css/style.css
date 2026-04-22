@@ -10902,7 +10902,7 @@ header.style-6 .main-menu .hotline-area .content h6 a {
 }
 .brand-category-area .single-category1::after {
   content: "";
-  background-image: url(../img/home1/category1-bg.png);
+  background-image: url(../img/home1/category1-bg.webp);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -12058,7 +12058,7 @@ header.style-6 .main-menu .hotline-area .content h6 a {
      12. Compare Car With Brand Section
 ========================================*/
 .compare-car-section .single-compare-card {
-  background-image: url(../img/home1/compare-bg.png), linear-gradient(#F6F4Fa, #F6F4Fa);
+  background-image: url(../img/home1/compare-bg.webp), linear-gradient(#F6F4Fa, #F6F4Fa);
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;
@@ -12888,7 +12888,7 @@ header.style-6 .main-menu .hotline-area .content h6 a {
      14. Testimonial Section
 ========================================*/
 .customar-feedback-area .customer-feedback-left {
-  background-image: url(../img/home1/customer-feedbac-bg1.png);
+  background-image: url(../img/home1/customer-feedbac-bg1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid #EEEEEE;
@@ -14597,7 +14597,7 @@ footer.style-3 .footer-btm .social-area ul li a:hover {
    23. Home2 Compar Section
 ========================================*/
 .home2-compare-area {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/home2/compire-bg.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/home2/compire-bg.webp);
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 90px;
@@ -15804,7 +15804,7 @@ footer.style-3 .footer-btm .social-area ul li a:hover {
    30. Home3 Compare Section
 ========================================*/
 .home3-compare-section {
-  background-image: url(../img/home1/why-choose-bg.png);
+  background-image: url(../img/home1/why-choose-bg.webp);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16398,7 +16398,7 @@ footer.style-3 .footer-btm .social-area ul li a:hover {
   line-height: 20px;
 }
 .home3-available-car .car-filter-area {
-  background-image: url(../img/home4/search-area-bg.png), linear-gradient(180deg, #f6f4fa 0%, #f6f4fa 100%);
+  background-image: url(../img/home4/search-area-bg.webp), linear-gradient(180deg, #f6f4fa 0%, #f6f4fa 100%);
   background-size: cover;
   background-repeat: no-repeat;
   padding: 40px 60px 140px;
@@ -22740,7 +22740,7 @@ button {
 }
 
 .sidebar-banner {
-  background-image: url(../img/inner-page/product-wd-bg.png), linear-gradient(#F6F4Fa, #F6F4Fa);
+  background-image: url(../img/inner-page/product-wd-bg.webp), linear-gradient(#F6F4Fa, #F6F4Fa);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -23589,7 +23589,7 @@ button {
 }
 
 .toprated-used-cars {
-  background-image: url(../img/inner-page/toprated-used-cars.png);
+  background-image: url(../img/inner-page/toprated-used-cars.webp);
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 80px;
@@ -23666,7 +23666,7 @@ button {
   height: 100%;
 }
 .product-category-page .single-category-wrap .category-card .category-img {
-  background-image: url(../img/inner-page/category-bg.png);
+  background-image: url(../img/inner-page/category-bg.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -23729,7 +23729,7 @@ button {
 }
 
 .compare-page .product-upload-area {
-  background-image: url(../img/inner-page/compare-bg.png);
+  background-image: url(../img/inner-page/compare-bg.webp);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
@@ -25389,7 +25389,7 @@ button {
   height: 100%;
 }
 .product-category-page .single-category-wrap .category-card .category-img {
-  background-image: url(../img/inner-page/category-bg.png);
+  background-image: url(../img/inner-page/category-bg.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -25452,7 +25452,7 @@ button {
 }
 
 .compare-page .product-upload-area {
-  background-image: url(../img/inner-page/compare-bg.png);
+  background-image: url(../img/inner-page/compare-bg.webp);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;

@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CarDetail from '../../components/CarDetail';
+import FloatingButtons from '../../components/FloatingButtons';
+import { staticVehicles } from '../../lib/api';
+
+export function getStaticPaths() {
+  return staticVehicles.map(car => ({
+    params: { id: car.id.toString() }
+  }));
+}
+
+const { id } = Astro.params;
+// Buscamos el vehículo en el servidor de Astro, no en el cliente
+const car = staticVehicles.find(v => v.id.toString() === id?.toString()) || staticVehicles[0];
+---
+
+<Layout title={`${car.name} ${car.year} | AEM Autos`}>
+  <Header />
+  
+  <main class="mt-5 pt-lg-5">
+    {/* Renderizamos como HTML estático (sin JS) para máxima velocidad y evitar errores de hidratación */}
+    <CarDetail car={car} />
+  </main>
+
+  <Footer />
+  <FloatingButtons client:idle />
+</Layout>

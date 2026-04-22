@@ -19,7 +19,7 @@ const HeroBanner = () => {
                 Ubicados en Santiago con financiamiento disponible.
               </p>
               <div className="d-flex flex-column flex-sm-row gap-3">
-                <a href="#vehiculos" className="primary-btn7 w-100 w-sm-auto text-center">VER CATÁLOGO</a>
+                <a href="/vehiculos" className="primary-btn7 w-100 w-sm-auto text-center">VER CATÁLOGO</a>
                 <a href="#contacto" className="btn-outline-custom w-100 w-sm-auto text-center">CONTACTO</a>
               </div>
             </div>
@@ -28,12 +28,13 @@ const HeroBanner = () => {
             <div className="banner-img-group position-relative mt-5 mt-lg-0 text-center">
                <div className="hero-img-wrap mx-auto" style={{ maxWidth: '100%' }}>
                  <img 
-                   src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" 
+                   src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" 
                    alt="Vehículo de lujo AEM Autos" 
                    className="img-fluid rounded-4 shadow-lg hero-banner-img"
-                   width="800"
-                   height="533"
+                   width="1200"
+                   height="800"
                    fetchPriority="high"
+                   loading="eager"
                  />
                  <div className="position-absolute bottom-0 start-0 bg-white p-3 rounded-4 shadow border m-3 sales-badge">
                     <h4 className="mb-0 fw-bold" style={{ color: '#0D3B66' }}>410+</h4>

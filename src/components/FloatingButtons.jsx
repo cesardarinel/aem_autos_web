@@ -13,7 +13,7 @@ const FloatingButtons = () => {
         <i className="bi bi-whatsapp"></i>
       </a>
       <a 
-        href="tel:+18099973787" 
+        href="tel:+18299823787" 
         className="floating-btn phone"
         aria-label="Llamar ahora"
       >

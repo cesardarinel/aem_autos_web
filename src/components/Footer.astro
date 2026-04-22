@@ -1,0 +1,100 @@
+---
+// src/components/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+<footer class="footer pt-100 pb-50" id="contacto">
+  <div class="container">
+    <div class="row g-4 mb-5">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-logo mb-4">
+          <img src="/assets/images/logos/logo-footer.webp" alt="AEM Autos" style="max-width: 180px;" />
+        </div>
+        <p class="mb-4">
+          Concesionario de vehículos importados americanos en Santiago, República Dominicana. 
+          Calidad AAA+, financiamiento rápido y atención personalizada.
+        </p>
+        <div class="footer-social">
+          <ul class="d-flex list-unstyled gap-3">
+            <li><a href="https://instagram.com/aemautosrd" class="social-link" target="_blank" rel="noreferrer"><i class="bi bi-instagram"></i></a></li>
+            <li><a href="https://facebook.com/aemautos" class="social-link" target="_blank" rel="noreferrer"><i class="bi bi-facebook"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-6">
+        <h5 class="footer-title mb-4">Navegación</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/vehiculos">Vehículos</a></li>
+          <li><a href="/nosotros">Nosotros</a></li>
+          <li><a href="/financiamiento">Financiamiento</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-title mb-4">Horarios</h5>
+        <ul class="list-unstyled footer-info">
+          <li><strong>Lun - Vie:</strong> 9:00 AM - 6:00 PM</li>
+          <li><strong>Sábados:</strong> 9:00 AM - 2:00 PM</li>
+          <li><strong>Domingos:</strong> Previa Cita</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-title mb-4">Contacto</h5>
+        <ul class="list-unstyled footer-info">
+          <li><i class="bi bi-geo-alt-fill me-2"></i> Santiago, República Dominicana</li>
+          <li><i class="bi bi-telephone-fill me-2"></i> (829) 982-3787</li>
+          <li><i class="bi bi-whatsapp me-2"></i> (809) 997-3787</li>
+          <li><i class="bi bi-envelope-fill me-2"></i> info@aemautos.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom pt-4 border-top">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0 small text-muted">&copy; {currentYear} AEM Autos. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="mb-0 small text-muted">Diseñado con <i class="bi bi-heart-fill text-danger"></i> para AEM Autos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(45, 114, 176, 0.1);
+    color: #2D72B0;
+    border-radius: 50%;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+  .social-link:hover {
+    background: #2D72B0;
+    color: white;
+  }
+  .footer-links a {
+    color: #666;
+    text-decoration: none;
+    transition: 0.3s;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .footer-links a:hover {
+    color: #2D72B0;
+    padding-left: 5px;
+  }
+  .footer-info li {
+    margin-bottom: 12px;
+    color: #666;
+  }
+</style>

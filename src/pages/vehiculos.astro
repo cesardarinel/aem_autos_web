@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Inventory from '../components/Inventory';
+import FloatingButtons from '../components/FloatingButtons';
+---
+
+<Layout title="Inventario de Vehículos | AEM Autos">
+  <Header />
+  
+  <main class="mt-5 pt-5">
+    <Inventory client:load />
+  </main>
+
+  <Footer />
+  <FloatingButtons client:idle />
+</Layout>

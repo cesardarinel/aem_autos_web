@@ -24,7 +24,7 @@ const FinancingPage = () => {
       `*Presupuesto:* ${presupuesto}%0A` +
       `*Inicial disponible:* ${inicial}`;
     
-    const whatsappUrl = `https://wa.me/18299951554?text=${mensaje}`;
+    const whatsappUrl = `https://wa.me/18099973787?text=${mensaje}`;
     window.open(whatsappUrl, '_blank');
   };
 

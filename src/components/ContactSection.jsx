@@ -1,5 +1,4 @@
 import React from 'react';
-import { Phone, MapPin, Clock, Instagram, Send, ExternalLink } from 'lucide-react';
 
 const ContactSection = () => {
   const handleSubmit = (e) => {
@@ -9,93 +8,98 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contacto" className="py-20 bg-brand-premium premium-section">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="text-brand-metal font-semibold uppercase tracking-wider text-sm">Contáctanos</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-4 text-white">Visítanos o escríbenos</h2>
+    <section id="contacto" className="py-5 bg-dark text-white">
+      <div className="container py-5">
+        <div className="text-center mb-5">
+          <span className="text-primary font-semibold uppercase tracking-wider text-sm">Contáctanos</span>
+          <h2 className="display-6 fw-bold mt-3 mb-4">Visítanos o escríbenos</h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <div className="bg-brand-navy rounded-2xl p-6 border border-brand-metal/30">
-              <h3 className="text-xl font-bold mb-6 text-white">Información de Contacto</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-brand-metal/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-brand-metal" />
+        <div className="row g-5">
+          <div className="col-lg-6">
+            <div className="bg-secondary bg-opacity-10 rounded-4 p-4 p-md-5 border border-secondary border-opacity-25 h-100">
+              <h3 className="h4 font-bold mb-4">Información de Contacto</h3>
+              <div className="vstack gap-4">
+                <div className="d-flex align-items-start gap-4">
+                  <div className="bg-primary bg-opacity-20 rounded-3 flex items-center justify-center flex-shrink-0" style={{ width: '48px', height: '48px' }}>
+                    <i className="bi bi-telephone text-primary fs-4"></i>
                   </div>
                   <div>
-                    <p className="text-sm text-white/70">Teléfonos</p>
-                    <p className="font-semibold text-white">(829) 995-1554</p>
-                    <p className="font-semibold text-white">(809) 997-3787</p>
+                    <p className="text-sm text-white-50 mb-0">Teléfonos</p>
+                    <p className="fw-bold mb-0">(829) 982-3787</p>
+                    <p className="fw-bold mb-0">(809) 997-3787</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-brand-metal/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-brand-metal" />
+                <div className="d-flex align-items-start gap-4">
+                  <div className="bg-primary bg-opacity-20 rounded-3 flex items-center justify-center flex-shrink-0" style={{ width: '48px', height: '48px' }}>
+                    <i className="bi bi-geo-alt text-primary fs-4"></i>
                   </div>
                   <div>
-                    <p className="text-sm text-white/70">Ubicación</p>
-                    <p className="font-semibold text-white">Calle Principal, El Caimito 41000</p>
-                    <p className="text-white/80">Santiago, República Dominicana</p>
-                    <p className="text-sm text-brand-metal mt-1">Plus Code: 998Q+JVQ</p>
+                    <p className="text-sm text-white-50 mb-0">Ubicación</p>
+                    <p className="fw-bold mb-0">Calle Principal, El Caimito 41000</p>
+                    <p className="text-white-50 mb-0">Santiago, República Dominicana</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-brand-metal/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-5 h-5 text-brand-metal" />
+                <div className="d-flex align-items-start gap-4">
+                  <div className="bg-primary bg-opacity-20 rounded-3 flex items-center justify-center flex-shrink-0" style={{ width: '48px', height: '48px' }}>
+                    <i className="bi bi-clock text-primary fs-4"></i>
                   </div>
                   <div>
-                    <p className="text-sm text-white/70">Horario de Atención</p>
-                    <p className="font-semibold text-white">Lunes a Domingo: 9:00 a.m. en adelante</p>
+                    <p className="text-sm text-white-50 mb-0">Horario de Atención</p>
+                    <p className="fw-bold mb-0">Lunes a Domingo: 9:00 a.m. en adelante</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-brand-metal/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Instagram className="w-5 h-5 text-brand-metal" />
+                <div className="d-flex align-items-start gap-4">
+                  <div className="bg-primary bg-opacity-20 rounded-3 flex items-center justify-center flex-shrink-0" style={{ width: '48px', height: '48px' }}>
+                    <i className="bi bi-instagram text-primary fs-4"></i>
                   </div>
                   <div>
-                    <p className="text-sm text-white/70">Redes Sociales</p>
-                    <a href="https://instagram.com/aemautosrd" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-metal hover:text-white transition-colors">@aemautosrd</a>
+                    <p className="text-sm text-white-50 mb-0">Redes Sociales</p>
+                    <a href="https://instagram.com/aemautosrd" target="_blank" rel="noopener noreferrer" className="fw-bold text-primary text-decoration-none">@aemautosrd</a>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="bg-brand-navy rounded-2xl p-6 border border-brand-metal/30">
-              <h3 className="text-xl font-bold mb-4 text-white">Envíanos un mensaje</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input type="text" placeholder="Tu nombre *" required className="form-input-custom w-full bg-brand-premium/50 border border-brand-silver/30 rounded-xl px-4 py-3 text-white placeholder-white/50" />
-                  <input type="tel" placeholder="Tu teléfono *" required className="form-input-custom w-full bg-brand-premium/50 border border-brand-silver/30 rounded-xl px-4 py-3 text-white placeholder-white/50" />
-                </div>
-                <input type="email" placeholder="Tu correo electrónico *" required className="form-input-custom w-full bg-brand-premium/50 border border-brand-silver/30 rounded-xl px-4 py-3 text-white placeholder-white/50" />
-                <textarea rows="4" placeholder="¿En qué podemos ayudarte?" className="form-input-custom w-full bg-brand-premium/50 border border-brand-silver/30 rounded-xl px-4 py-3 text-white placeholder-white/50"></textarea>
-                <button type="submit" className="btn-primary-custom w-full bg-brand-metal hover:bg-white hover:text-brand-navy text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 border-2 border-brand-metal">
-                  Enviar mensaje
-                  <Send size={20} />
-                </button>
-              </form>
+              <div className="mt-5 rounded-4 overflow-hidden" style={{ height: '250px' }}>
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.5!2d-70.7!3d19.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb0f5c5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sEl%20Caimito%2C%20Santiago%2C%20Rep%C3%BAblica%20Dominicana!5e0!3m2!1ses!2sdo!4v1234567890" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
             </div>
           </div>
 
-          <div>
-            <div className="map-container">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.5!2d-70.7!3d19.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb0f5c5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sEl%20Caimito%2C%20Santiago%2C%20Rep%C3%BAblica%20Dominicana!5e0!3m2!1ses!2sdo!4v1234567890" 
-                allowFullScreen="" 
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación de AEM Autos">
-              </iframe>
-            </div>
-            <div className="mt-4 text-center">
-              <a href="https://maps.google.com/?q=998Q+JVQ" target="_blank" rel="noopener noreferrer" 
-                 className="inline-flex items-center gap-2 text-brand-metal font-semibold hover:text-white transition-colors">
-                <ExternalLink size={16} />
-                Abrir en Google Maps
-              </a>
+          <div className="col-lg-6">
+            <div className="card border-0 shadow-sm p-4 p-md-5 rounded-4 h-100 bg-white text-dark">
+              <h3 className="h4 font-bold mb-4">Envíanos un mensaje</h3>
+              <form onSubmit={handleSubmit} className="row g-3">
+                <div className="col-md-6">
+                  <label className="form-label small fw-bold">Nombre Completo</label>
+                  <input type="text" className="form-control" placeholder="Tu nombre" required />
+                </div>
+                <div className="col-md-6">
+                  <label className="form-label small fw-bold">Teléfono</label>
+                  <input type="tel" className="form-control" placeholder="Tu teléfono" required />
+                </div>
+                <div className="col-12">
+                  <label className="form-label small fw-bold">Correo Electrónico</label>
+                  <input type="email" className="form-control" placeholder="tu@email.com" required />
+                </div>
+                <div className="col-12">
+                  <label className="form-label small fw-bold">Mensaje</label>
+                  <textarea className="form-control" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                </div>
+                <div className="col-12 mt-4">
+                  <button type="submit" className="btn btn-primary w-100 py-3 fw-bold d-flex align-items-center justify-content-center gap-2">
+                    <i className="bi bi-send"></i> ENVIAR MENSAJE
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

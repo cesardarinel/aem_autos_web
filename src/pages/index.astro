@@ -1,13 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import HeroBanner from '../components/HeroBanner';
-import LatestCars from '../components/LatestCars';
-import ExploreBrands from '../components/ExploreBrands';
-import Footer from '../components/Footer';
+import HeroBanner from '../components/HeroBanner.astro';
+import ExploreBrands from '../components/ExploreBrands.astro';
+import Footer from '../components/Footer.astro';
 import FloatingButtons from '../components/FloatingButtons';
 
-// Este es el componente principal de la Home
+// Este es el componente principal de la Home con Astro al 100%
 ---
 
 <Layout title="AEM Autos | Vehículos Importados Directo de USA">
@@ -16,10 +15,6 @@ import FloatingButtons from '../components/FloatingButtons';
   <main>
     <div id="home-view" data-aos="fade-up">
       <HeroBanner />
-    </div>
-
-    <div id="vehiculos" data-aos="fade-up" data-aos-delay="100">
-      <LatestCars />
     </div>
 
     <div id="beneficios" data-aos="fade-up">
