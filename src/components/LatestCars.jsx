@@ -1,39 +1,39 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+import { getContentEntries } from '../lib/api';
 import CarCard from './CarCard';
 
 const LatestCars = () => {
-  const cars = [
-    {
-      id: 1,
-      name: 'Jeep Grand Cherokee',
-      image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=600&q=80',
-      year: '2022',
-      transmission: 'Automático',
-      mileage: '28,500 miles',
-      price: '$38,500',
-      location: 'Santiago, RD'
-    },
-    {
-      id: 2,
-      name: 'Ford F-150 Lariat',
-      image: 'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=600&q=80',
-      year: '2023',
-      transmission: 'V6 EcoBoost',
-      mileage: '15,200 miles',
-      price: '$52,900',
-      location: 'Santiago, RD'
-    },
-    {
-      id: 3,
-      name: 'Chevrolet Tahoe',
-      image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80',
-      year: '2021',
-      transmission: 'V8 Engine',
-      mileage: '32,100 miles',
-      price: '$45,800',
-      location: 'Santiago, RD'
+  const [cars, setCars] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadCars() {
+      try {
+        const data = await getContentEntries('vehiculo');
+        setCars(data.slice(0, 6));
+      } catch (error) {
+        console.error('Error loading vehicles:', error);
+      } finally {
+        setLoading(false);
+      }
     }
-  ];
+    loadCars();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="home6-letest-car-section" id="vehiculos">
+        <div className="container py-5 text-center">
+          <div className="spinner-border text-primary" role="status"></div>
+        </div>
+      </div>
+    );
+  }
+
+  if (cars.length === 0) {
+    return null;
+  }
 
   return (
     <div className="home6-letest-car-section" id="vehiculos">

@@ -10,6 +10,28 @@ const CarDetail = ({ car }) => {
   const whatsappMessage = `Hola, me interesa el ${car.name} ${car.year} que vi en su sitio web.`;
   const whatsappUrl = `https://wa.me/18099973787?text=${encodeURIComponent(whatsappMessage)}`;
 
+  const hasValue = (val) => val !== undefined && val !== null && val !== '';
+
+  const specsRow1 = [
+    { label: 'Transmisión', value: car.transmission, icon: 'bi-gear' },
+    { label: 'Tracción', value: car.drive, icon: 'bi-compass' },
+    { label: 'Combustible', value: car.fuel, icon: 'bi-fuel-pump' },
+    { label: 'SKU', value: car.sku, icon: 'bi-upc' },
+  ].filter(s => hasValue(s.value));
+
+  const generalRows = [
+    [{ label: 'Precio', value: priceFormatted }, { label: 'Marca', value: car.brand }],
+    [{ label: 'Modelo', value: car.model }, { label: 'Año', value: car.year }],
+    [{ label: 'Combustible', value: car.fuel }, { label: 'Transmisión', value: car.transmission }],
+    [{ label: 'Tracción', value: car.drive }, { label: 'Uso', value: car.mileage }],
+    [{ label: 'Tipo', value: car.type }, { label: 'Ubicación', value: car.location }],
+  ].filter(row => row.some(cell => hasValue(cell.value)));
+
+  const hasAccessories = car.accessories && car.accessories.length > 0;
+  const hasGeneralInfo = generalRows.length > 0;
+  const hasSpecs = specsRow1.length > 0;
+  const isAvailable = car.statusRaw !== 'vendido';
+
   return (
     <div className="car-detail-section py-5 bg-light">
       <div className="container">
@@ -21,10 +43,18 @@ const CarDetail = ({ car }) => {
               <li className="breadcrumb-item active fw-bold" aria-current="page">{car.name}</li>
             </ol>
           </nav>
-          <div className="text-muted small">
-            <span>Anuncio #{car.adNumber}</span>
-          </div>
+          {car.sku && (
+            <div className="text-muted small">
+              <span>SKU: {car.sku}</span>
+            </div>
+          )}
         </div>
+
+        {!isAvailable && (
+          <div className="alert alert-danger text-center py-2 mb-4 rounded-4">
+            <strong>VEHÍCULO VENDIDO</strong>
+          </div>
+        )}
 
         <div className="row g-4">
           <div className="col-lg-8">
@@ -37,95 +67,87 @@ const CarDetail = ({ car }) => {
               />
             </div>
 
-            <div className="card border-0 shadow-sm mb-4 p-3 rounded-4 bg-white">
-              <div className="row text-center g-2">
-                <div className="col-3 border-end">
-                  <i className="bi bi-gear d-block text-primary mb-1"></i>
-                  <span className="small text-muted d-block">Transmisión</span>
-                  <span className="fw-bold small">{car.transmission}</span>
-                </div>
-                <div className="col-3 border-end">
-                  <i className="bi bi-compass d-block text-primary mb-1"></i>
-                  <span className="small text-muted d-block">Tracción</span>
-                  <span className="fw-bold small">{car.drive}</span>
-                </div>
-                <div className="col-3 border-end">
-                  <i className="bi bi-fuel-pump d-block text-primary mb-1"></i>
-                  <span className="small text-muted d-block">Combustible</span>
-                  <span className="fw-bold small">{car.fuel}</span>
-                </div>
-                <div className="col-3">
-                  <i className="bi bi-palette d-block text-primary mb-1"></i>
-                  <span className="small text-muted d-block">Color</span>
-                  <span className="fw-bold small">{car.color}</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="card border-0 shadow-sm mb-4 rounded-4 bg-white overflow-hidden">
-              <div className="card-header bg-white py-3 border-bottom-0">
-                <h5 className="fw-bold mb-0">Datos Generales</h5>
-              </div>
-              <div className="card-body p-0">
-                <div className="row g-0">
-                  <div className="col-md-6">
-                    <table className="table table-striped mb-0">
-                      <tbody>
-                        <tr><td className="ps-4 text-muted w-50">Precio:</td><td className="fw-bold">{priceFormatted}</td></tr>
-                        <tr><td className="ps-4 text-muted">Motor:</td><td className="fw-bold">{car.engine}</td></tr>
-                        <tr><td className="ps-4 text-muted">Exterior:</td><td className="fw-bold">{car.color}</td></tr>
-                        <tr><td className="ps-4 text-muted">Interior:</td><td className="fw-bold">{car.interiorColor}</td></tr>
-                        <tr><td className="ps-4 text-muted">Combustible:</td><td className="fw-bold">{car.fuel}</td></tr>
-                        <tr><td className="ps-4 text-muted">Transmisión:</td><td className="fw-bold">{car.transmission}</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="col-md-6">
-                    <table className="table table-striped mb-0">
-                      <tbody>
-                        <tr><td className="ps-4 text-muted w-50">Tipo:</td><td className="fw-bold">{car.type}</td></tr>
-                        <tr><td className="ps-4 text-muted">Uso:</td><td className="fw-bold">{car.mileage}</td></tr>
-                        <tr><td className="ps-4 text-muted">Puertas:</td><td className="fw-bold">{car.doors}</td></tr>
-                        <tr><td className="ps-4 text-muted">Pasajeros:</td><td className="fw-bold">{car.passengers}</td></tr>
-                        <tr><td className="ps-4 text-muted">Tracción:</td><td className="fw-bold">{car.drive}</td></tr>
-                        <tr><td className="ps-4 text-muted">Ubicación:</td><td className="fw-bold">{car.location}</td></tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="card border-0 shadow-sm mb-4 rounded-4 bg-white">
-              <div className="card-header bg-white py-3 border-bottom-0">
-                <h5 className="fw-bold mb-0">Accesorios</h5>
-              </div>
-              <div className="card-body">
-                <div className="row g-3">
-                  {car.accessories?.map((acc, index) => (
-                    <div key={index} className="col-md-4 col-6">
-                      <div className="d-flex align-items-center small">
-                        <i className="bi bi-check-circle-fill text-primary me-2"></i>
-                        {acc}
-                      </div>
+            {hasSpecs && (
+              <div className="card border-0 shadow-sm mb-4 p-3 rounded-4 bg-white">
+                <div className="row text-center g-2">
+                  {specsRow1.map((spec, idx) => (
+                    <div key={idx} className={`col-${12 / specsRow1.length} ${idx < specsRow1.length - 1 ? 'border-end' : ''}`}>
+                      <i className={`${spec.icon} d-block text-primary mb-1`}></i>
+                      <span className="small text-muted d-block">{spec.label}</span>
+                      <span className="fw-bold small">{spec.value}</span>
                     </div>
                   ))}
                 </div>
               </div>
-            </div>
+            )}
 
-            <div className="card border-0 shadow-sm p-4 rounded-4 bg-white mb-4">
-              <h5 className="fw-bold mb-3">Información Adicional</h5>
-              <p className="text-muted mb-0" style={{ lineHeight: '1.8' }}>{car.description}</p>
-            </div>
+            {hasGeneralInfo && (
+              <div className="card border-0 shadow-sm mb-4 rounded-4 bg-white overflow-hidden">
+                <div className="card-header bg-white py-3 border-bottom-0">
+                  <h5 className="fw-bold mb-0">Datos Generales</h5>
+                </div>
+                <div className="card-body p-0">
+                  <div className="row g-0">
+                    {generalRows.map((row, rowIdx) => (
+                      <div key={rowIdx} className="col-md-6">
+                        <table className="table table-striped mb-0">
+                          <tbody>
+                            {row.map((cell, cellIdx) => (
+                              hasValue(cell.value) && (
+                                <tr key={cellIdx}>
+                                  <td className="ps-4 text-muted w-50">{cell.label}:</td>
+                                  <td className="fw-bold">{cell.value}</td>
+                                </tr>
+                              )
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {hasAccessories && (
+              <div className="card border-0 shadow-sm mb-4 rounded-4 bg-white">
+                <div className="card-header bg-white py-3 border-bottom-0">
+                  <h5 className="fw-bold mb-0">Accesorios</h5>
+                </div>
+                <div className="card-body">
+                  <div className="row g-3">
+                    {car.accessories.map((acc, index) => (
+                      <div key={index} className="col-md-4 col-6">
+                        <div className="d-flex align-items-center small">
+                          <i className="bi bi-check-circle-fill text-primary me-2"></i>
+                          {acc}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {hasValue(car.description) && (
+              <div className="card border-0 shadow-sm p-4 rounded-4 bg-white mb-4">
+                <h5 className="fw-bold mb-3">Información Adicional</h5>
+                <p className="text-muted mb-0" style={{ lineHeight: '1.8' }}>{car.description}</p>
+              </div>
+            )}
           </div>
 
           <div className="col-lg-4">
             <div className="sticky-top" style={{ top: '100px', zIndex: 1 }}>
               <div className="card border-0 shadow-lg p-4 mb-4 rounded-4 bg-white border-top border-primary border-5">
                 <div className="d-none d-lg-block mb-3">
-                  <h1 className="fw-bold h3 mb-2">{car.name} {car.year}</h1>
+                  <h1 className="fw-bold h3 mb-2">{car.brand} {car.model} {car.year}</h1>
                   <h2 className="text-primary fw-bold mb-4">{priceFormatted}</h2>
+                  {car.status && (
+                    <span className={`badge ${isAvailable ? 'bg-success' : 'bg-danger'} mb-2`}>
+                      {car.status}
+                    </span>
+                  )}
                 </div>
                 
                 <div className="d-grid gap-3">
@@ -144,7 +166,6 @@ const CarDetail = ({ car }) => {
                 <a href="/financiamiento" className="btn btn-outline-primary w-100 rounded-pill fw-bold py-2">SOLICITAR AHORA</a>
               </div>
 
-              {/* Warranty Info Rediseñada */}
               <div className="card border-0 shadow-sm p-4 bg-white rounded-4 border-start border-primary border-5">
                 <div className="d-flex align-items-center mb-3">
                   <div className="bg-primary bg-opacity-10 p-2 rounded-circle me-3 d-flex align-items-center justify-content-center" style={{width: '40px', height: '40px'}}>

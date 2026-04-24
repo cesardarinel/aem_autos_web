@@ -1,8 +1,10 @@
 import React from 'react';
-import { staticVehicles } from '../lib/api';
+import { getContentEntries } from '../lib/api';
 import CarCard from './CarCard';
 
 const Inventory = () => {
+  const [cars, setCars] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
   const [filters, setFilters] = React.useState({
     search: '',
     brand: '',
@@ -11,15 +13,48 @@ const Inventory = () => {
     maxPrice: ''
   });
 
-  // Usamos useMemo para filtrar solo cuando los filtros cambian, evitando cálculos en cada render
+  React.useEffect(() => {
+    async function loadCars() {
+      try {
+        const response = await fetch('https://manager.1bits.site/api/websites/content/vehiculo/entries/', {
+          headers: { 'Authorization': 'Bearer o65jDLV7i4EKViCf7eYEuRwOjYBaR20bHWIGlGMM5MQbCRgjiHWAtpXQJXcGv-bi' }
+        });
+        if (response.ok) {
+          const entries = await response.json();
+          const data = entries.map(entry => {
+            const data = entry.data;
+            return {
+              id: entry.id,
+              name: data.title || data.model,
+              brand: data.brand,
+              model: data.model,
+              year: data.year,
+              price: data.price_usd,
+              image: data.hero_image?.startsWith('http') ? data.hero_image : 'https://manager.1bits.site' + data.hero_image,
+              fuel: data.fuel_type,
+              statusRaw: data.status,
+              status: data.status === 'disponible' ? 'Disponible' : 'Vendido'
+            };
+          });
+          setCars(data);
+        }
+      } catch (error) {
+        console.error('Error loading vehicles:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadCars();
+  }, []);
+
   const filteredCars = React.useMemo(() => {
-    let result = staticVehicles;
+    let result = cars;
 
     if (filters.search) {
       const searchLower = filters.search.toLowerCase();
       result = result.filter(car => 
-        car.name.toLowerCase().includes(searchLower) ||
-        car.brand.toLowerCase().includes(searchLower)
+        (car.name || '').toLowerCase().includes(searchLower) ||
+        (car.brand || '').toLowerCase().includes(searchLower)
       );
     }
 
@@ -28,29 +63,43 @@ const Inventory = () => {
     }
 
     if (filters.year) {
-      result = result.filter(car => car.year.toString() === filters.year);
+      result = result.filter(car => car.year?.toString() === filters.year);
     }
 
     if (filters.minPrice) {
       const min = parseFloat(filters.minPrice);
-      result = result.filter(car => car.price >= min);
+      result = result.filter(car => (car.price || 0) >= min);
     }
 
     if (filters.maxPrice) {
       const max = parseFloat(filters.maxPrice);
-      result = result.filter(car => car.price <= max);
+      result = result.filter(car => (car.price || 0) <= max);
     }
 
     return result;
-  }, [filters]);
+  }, [cars, filters]);
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters(prev => ({ ...prev, [name]: value }));
   };
 
-  const brands = [...new Set(staticVehicles.map(car => car.brand))].sort();
-  const years = [...new Set(staticVehicles.map(car => car.year))].sort((a, b) => b - a);
+  const brands = [...new Set(cars.map(car => car.brand).filter(Boolean))].sort();
+  const years = [...new Set(cars.map(car => car.year).filter(Boolean))].sort((a, b) => b - a);
+
+  if (loading) {
+    return (
+      <div className="inventory-section py-5">
+        <div className="container">
+          <div className="text-center py-5">
+            <div className="spinner-border text-primary" role="status">
+              <span className="visually-hidden">Cargando...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="inventory-section py-5">

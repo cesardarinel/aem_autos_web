@@ -2,27 +2,29 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import CarDetail from '../../components/CarDetail';
+import CarDetailClient from '../../components/CarDetailClient';
 import FloatingButtons from '../../components/FloatingButtons';
-import { staticVehicles } from '../../lib/api';
+import { getContentEntries } from '../../lib/api';
 
-export function getStaticPaths() {
-  return staticVehicles.map(car => ({
-    params: { id: car.id.toString() }
-  }));
+export async function getStaticPaths() {
+  try {
+    const response = await fetch('https://manager.1bits.site/api/websites/content/vehiculo/entries/', {
+      headers: { 'Authorization': 'Bearer o65jDLV7i4EKViCf7eYEuRwOjYBaR20bHWIGlGMM5MQbCRgjiHWAtpXQJXcGv-bi' }
+    });
+    if (response.ok) {
+      const entries = await response.json();
+      return entries.map(entry => ({ params: { id: entry.id.toString() } }));
+    }
+  } catch (e) {}
+  return [{ params: { id: '1' } }];
 }
-
-const { id } = Astro.params;
-// Buscamos el vehículo en el servidor de Astro, no en el cliente
-const car = staticVehicles.find(v => v.id.toString() === id?.toString()) || staticVehicles[0];
 ---
 
-<Layout title={`${car.name} ${car.year} | AEM Autos`}>
+<Layout title="Cargando vehículo | AEM Autos">
   <Header />
   
   <main class="mt-5 pt-lg-5">
-    {/* Renderizamos como HTML estático (sin JS) para máxima velocidad y evitar errores de hidratación */}
-    <CarDetail car={car} />
+    <CarDetailClient client:only="react" />
   </main>
 
   <Footer />
