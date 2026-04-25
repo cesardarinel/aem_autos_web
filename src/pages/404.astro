@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="404 - Página no encontrada | AEM Autos">
+  <Header />
+  
+  <main>
+    <section class="error-section py-5 my-5 text-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h1 class="display-1 fw-bold text-primary">404</h1>
+            <h2 class="mb-4">¡Ups! Página no encontrada</h2>
+            <p class="lead text-muted mb-5">
+              Lo sentimos, la página que estás buscando no existe o ha sido movida. 
+              Puedes volver al inicio o explorar nuestro catálogo de vehículos.
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+              <a href="/" class="btn btn-primary btn-lg px-5 py-3 rounded-pill fw-bold">VOLVER AL INICIO</a>
+              <a href="/vehiculos" class="btn btn-outline-primary btn-lg px-5 py-3 rounded-pill fw-bold">VER VEHÍCULOS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .error-section {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+  }
+</style>

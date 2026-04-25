@@ -1,0 +1,77 @@
+---
+// src/components/SEO.astro
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: URL | string;
+}
+
+const {
+  title = "AEM Autos | Vehículos Importados Directo de USA",
+  description = "Especialistas en vehículos americanos de alta calidad (AAA+). Ubicados en Santiago con financiamiento disponible.",
+  image = "/assets/images/logos/logo.webp", // Debería ser una URL absoluta en prod
+  canonicalURL = Astro.url,
+} = Astro.props;
+
+const siteName = "AEM Autos";
+---
+
+<!-- Standard Meta Tags -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:site_name" content={siteName} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- JSON-LD Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  "name": "AEM Autos",
+  "image": "https://aemautos.com/assets/images/logos/logo.webp",
+  "@id": "https://aemautos.com",
+  "url": "https://aemautos.com",
+  "telephone": "+18099973787",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Principal, El Caimito",
+    "addressLocality": "Santiago",
+    "postalCode": "41000",
+    "addressCountry": "DO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 19.45,
+    "longitude": -70.7
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "09:00",
+    "closes": "20:00"
+  }
+}
+</script>
