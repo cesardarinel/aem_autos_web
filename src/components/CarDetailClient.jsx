@@ -27,9 +27,9 @@ const CarDetailClient = ({ vehicleId }) => {
         }
         
         const data = await getEntry('vehiculo', id);
-        console.log('Detalle del vehículo recibido:', data);
-        
-        if (data && Object.keys(data).length > 0) {
+        if (data) {
+          console.log('Campos disponibles en el vehículo:', Object.keys(data));
+          console.log('Datos completos del vehículo:', data);
           setCar(data);
           document.title = (data.name || 'Vehículo') + ' ' + (data.year || '') + ' | AEM Autos';
         } else {
