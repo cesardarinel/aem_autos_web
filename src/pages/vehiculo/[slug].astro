@@ -8,30 +8,32 @@ import { getContentEntries } from '../../lib/api';
 
 export async function getStaticPaths() {
   try {
-    // Usamos la función centralizada que ya tiene el token y la lógica robusta
     const entries = await getContentEntries('vehiculo');
     
     if (entries && entries.length > 0) {
-      return entries.map(entry => ({ 
-        params: { id: entry.id.toString() } 
-      }));
+      return entries.map(entry => {
+        const fullSlug = `${entry.slug}-${entry.id}`;
+        return { 
+          params: { slug: fullSlug },
+          props: { id: entry.id }
+        };
+      });
     }
   } catch (e) {
     console.error("Error en getStaticPaths:", e);
   }
   
-  // Fallback para evitar que el build falle si la API está caída
   return [];
 }
 
-const { id } = Astro.params;
+const { id } = Astro.props;
 ---
 
 <Layout title="Cargando vehículo | AEM Autos">
   <Header />
   
   <main class="mt-5 pt-lg-5">
-    <CarDetailClient client:only="react" />
+    <CarDetailClient vehicleId={id} client:only="react" />
   </main>
 
   <Footer />
