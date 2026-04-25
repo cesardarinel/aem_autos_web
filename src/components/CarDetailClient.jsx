@@ -2,7 +2,7 @@ import React from 'react';
 import { getEntry, getContentEntries } from '../lib/api';
 import CarDetail from './CarDetail';
 
-const CarDetailClient = () => {
+const CarDetailClient = ({ vehicleId }) => {
   const [car, setCar] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
@@ -10,23 +10,32 @@ const CarDetailClient = () => {
   React.useEffect(() => {
     async function loadCar() {
       try {
-        const pathParts = window.location.pathname.split('/vehiculo/');
-        const id = pathParts[1];
+        let id = vehicleId;
         
+        // Si no viene por prop, intentar extraerlo de la URL (formato: slug-id)
         if (!id) {
-          setError('ID no proporcionado');
+          const pathParts = window.location.pathname.split('/');
+          const slugPart = pathParts[pathParts.length - 1]; // "nombre-carro-58"
+          const slugSegments = slugPart.split('-');
+          id = slugSegments[slugSegments.length - 1]; // "58"
+        }
+        
+        if (!id || isNaN(id)) {
+          setError('Vehículo no encontrado');
           setLoading(false);
           return;
         }
         
         const data = await getEntry('vehiculo', id);
+        console.log('Detalle del vehículo recibido:', data);
         
-        if (data) {
+        if (data && Object.keys(data).length > 0) {
           setCar(data);
           document.title = (data.name || 'Vehículo') + ' ' + (data.year || '') + ' | AEM Autos';
         } else {
+          // Fallback: buscar en el listado completo si getEntry falla
           const cars = await getContentEntries('vehiculo');
-          const found = cars.find(c => c.id.toString() === id);
+          const found = cars.find(c => c.id.toString() === id.toString());
           if (found) {
             setCar(found);
             document.title = (found.name || 'Vehículo') + ' ' + (found.year || '') + ' | AEM Autos';
@@ -42,7 +51,7 @@ const CarDetailClient = () => {
       }
     }
     loadCar();
-  }, []);
+  }, [vehicleId]);
 
   if (loading) {
     return (

@@ -2,6 +2,9 @@ import React from 'react';
 
 const CarCard = ({ car }) => {
   const carId = car?.id ?? car?.ID ?? 0;
+  const carSlug = car?.slug || 'vehiculo';
+  const detailUrl = `/vehiculo/${carSlug}-${carId}`;
+
   const priceFormatted = typeof car.price === 'number' 
     ? `$${car.price.toLocaleString()}` 
     : car.price;
@@ -10,7 +13,7 @@ const CarCard = ({ car }) => {
   return (
     <div className="product-card4 style-3 shadow-sm h-100 border-0 overflow-hidden bg-white">
       <div className="product-img position-relative">
-        <a href={`/vehiculo/${carId}`}>
+        <a href={detailUrl}>
           <img 
             src={car.image} 
             alt={car.name} 
@@ -30,7 +33,7 @@ const CarCard = ({ car }) => {
           <i className="bi bi-geo-alt me-1"></i> {car.location || 'Santiago, RD'}
         </div>
         <h6 className="mb-3">
-          <a href={`/vehiculo/${carId}`} className="text-decoration-none text-dark fw-bold h5 d-block">
+          <a href={detailUrl} className="text-decoration-none text-dark fw-bold h5 d-block">
             {car.brand} {car.model}
           </a>
         </h6>
