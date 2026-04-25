@@ -1,0 +1,12 @@
+services:
+  client:
+    build: .
+    expose:
+      - 8000
+    networks:
+      - dokploy-network
+    restart: always
+
+networks:
+  dokploy-network:
+    external: true
