@@ -16,28 +16,8 @@ const Inventory = () => {
   React.useEffect(() => {
     async function loadCars() {
       try {
-        const response = await fetch('https://manager.1bits.site/api/websites/content/vehiculo/entries/', {
-          headers: { 'Authorization': 'Bearer o65jDLV7i4EKViCf7eYEuRwOjYBaR20bHWIGlGMM5MQbCRgjiHWAtpXQJXcGv-bi' }
-        });
-        if (response.ok) {
-          const entries = await response.json();
-          const data = entries.map(entry => {
-            const data = entry.data;
-            return {
-              id: entry.id,
-              name: data.title || data.model,
-              brand: data.brand,
-              model: data.model,
-              year: data.year,
-              price: data.price_usd,
-              image: data.hero_image?.startsWith('http') ? data.hero_image : 'https://manager.1bits.site' + data.hero_image,
-              fuel: data.fuel_type,
-              statusRaw: data.status,
-              status: data.status === 'disponible' ? 'Disponible' : 'Vendido'
-            };
-          });
-          setCars(data);
-        }
+        const data = await getContentEntries('vehiculo');
+        setCars(data);
       } catch (error) {
         console.error('Error loading vehicles:', error);
       } finally {
