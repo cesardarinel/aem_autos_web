@@ -2,7 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import HeroBanner from '../components/HeroBanner.astro';
+import LatestCars from '../components/LatestCars';
 import ExploreBrands from '../components/ExploreBrands.astro';
+import HowItWorks from '../components/HowItWorks';
 import Footer from '../components/Footer.astro';
 import FloatingButtons from '../components/FloatingButtons';
 
@@ -13,12 +15,20 @@ import FloatingButtons from '../components/FloatingButtons';
   <Header />
   
   <main>
-    <div id="home-view" data-aos="fade-up">
+    <div id="home-view" data-aos="fade-down">
       <HeroBanner />
+    </div>
+
+    <div id="vehiculos" data-aos="fade-up">
+      <LatestCars client:visible />
     </div>
 
     <div id="beneficios" data-aos="fade-up">
       <ExploreBrands />
+    </div>
+
+    <div id="como-funciona" data-aos="fade-up">
+      <HowItWorks client:visible />
     </div>
     
     <div class="py-5 text-center bg-light">

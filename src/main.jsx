@@ -1,18 +1,6 @@
-import React from 'react'
-import * as ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-// Global CSS imports
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './styles/all.min.css'
-import './styles/style.css'
-import './styles/main.css'
-
-const container = document.getElementById('root');
-if (container) {
-  const root = ReactDOM.createRoot(container);
-  root.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-  )
-}
+/**
+ * ARCHIVO OBSOLETO
+ * Este archivo era el punto de entrada de la aplicación React pura.
+ * En Astro, la hidratación se maneja automáticamente y las páginas están en src/pages/.
+ * Puedes eliminar este archivo con seguridad.
+ */

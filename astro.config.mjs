@@ -8,6 +8,21 @@ export default defineConfig({
     react(),
     sitemap()
   ],
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['react', 'react-dom'],
+          },
+        },
+      },
+    },
+    // Solo aplicamos el drop de consoles si NO estamos en modo desarrollo
+    esbuild: process.env.NODE_ENV === 'production' ? {
+      drop: ['console', 'debugger'],
+    } : {},
+  },
   redirects: {
     // Ejemplo de redirección: '/antigua-pagina': { status: 301, destination: '/nueva-pagina' }
   }

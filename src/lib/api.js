@@ -37,8 +37,6 @@ function transformVehicle(entry) {
   if (!entry) return null;
   
   const data = entry.data || entry;
-  // LOG CRITICO: Ver qué campos trae la API originalmente
-  console.log('DATOS CRUDOS DEL API:', data);
   
   const entryId = entry.id || data.id || 0;
   const gallery = getGalleryArray(data);
